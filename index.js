@@ -14,6 +14,12 @@ require('fs').readdirSync(__dirname + '/modules/').forEach(function(file) {
   }
 });
 
+var mongodb = require('mongodb');
+var mongodbServer = new mongodb.Server('DB_URL', PORTNUMBER, { auto_reconnect: true });
+var db = new mongodb.Db('DB_NAME', mongodbServer);
+var db_account = process.env.DB_A,
+       db_password = process.env.DB_P;
+
 var options = {
 	host: 'api.line.me',
 	port: 443,
