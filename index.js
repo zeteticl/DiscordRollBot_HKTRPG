@@ -92,11 +92,12 @@ break;
 
 //
 // Preamble
-
+//1
 var mongoose = require ("mongoose"); // The reason for this demo.
 
 // Here we find an appropriate database to connect to, defaulting to
 // localhost if we don't find one.  
+//2
 var uristring = 
   process.env.MONGODB_URI || 
   'mongodb://testroll:testroll@ds243768.mlab.com:43768/testroll';
@@ -111,22 +112,26 @@ mongoose.connect(uristring, function (err, res) {
   }
 });
 
+//3
 var kittySchema = mongoose.Schema({
   name: String
 });
 
 
-var Kitten = mongoose.model('Kitten', kittySchema);
+var Kittens = mongoose.model('Kitten', kittySchema);
 
-var silence = new Kitten({ name: 'Silence' });
-console.log(silence.name); // 'Silence'
+//4
+var silence = new Kittens({ name: 'Silence' });
+//console.log(silence.name); // 'Silence'
 
 
-var fluffy = new Kitten({ name: 'fluffy' });
-//fluffy.speak(); // "Meow name is fluffy"
-
-	
-  fluffy.save(function (err, fluffy) {
+//5	
+  silence.save(function (err, silence) {
     if (err) return console.error(err);
      console.log(Kitten);
   });
+  
+silence.find(function (err, silence) {
+  if (err) return console.error(err);
+  console.log(silence+silence+"hi");
+})
