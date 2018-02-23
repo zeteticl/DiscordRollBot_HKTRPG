@@ -93,8 +93,6 @@ break;
 //
 // Preamble
 //1
-var mongoose = require ("mongoose"); // The reason for this demo.
-
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI ||  'mongodb://testroll:testroll@ds243768.mlab.com:43768/testroll');
 
