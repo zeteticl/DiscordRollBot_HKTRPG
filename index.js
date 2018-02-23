@@ -95,43 +95,10 @@ break;
 //1
 var mongoose = require ("mongoose"); // The reason for this demo.
 
-// Here we find an appropriate database to connect to, defaulting to
-// localhost if we don't find one.  
-//2
-var uristring = 
-  process.env.MONGODB_URI || 
-  'mongodb://testroll:testroll@ds243768.mlab.com:43768/testroll';
-  
-  // Makes connection asynchronously.  Mongoose will queue up database
-// operations and release them when the connection is complete.
-mongoose.connect(uristring, function (err, res) {
-  if (err) { 
-    console.log ('ERROR connecting to: ' + uristring + '. ' + err);
-  } else {
-    console.log ('Succeeded connected to: ' + uristring);
-  }
-});
+const mongoose = require('mongoose');
+mongoose.connect(process.env.MONGODB_URI ||  'mongodb://testroll:testroll@ds243768.mlab.com:43768/testroll');
 
-//3
-var kittySchema = mongoose.Schema({
-  name: String
-});
+const Cat = mongoose.model('Cat', { name: String });
 
-
-var Kittens = mongoose.model('Kitten', kittySchema);
-
-//4
-var silence = new Kittens({ name: 'Silence' });
-//console.log(silence.name); // 'Silence'
-
-
-//5	
-  silence.save(function (err, silence) {
-    if (err) return console.error(err);
-     console.log(Kitten);
-  });
-  
-silence.find(function (err, silence) {
-  if (err) return console.error(err);
-  console.log(silence+silence+"hi");
-})
+const kitty = new Cat({ name: 'Zildjian' });
+kitty.save().then(() => console.log('meow'));
