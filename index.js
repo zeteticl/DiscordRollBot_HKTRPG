@@ -36,7 +36,7 @@ app.post('/', jsonParser, function(req, res) {
 	let event = req.body.events[0];
 	//let rplyToken = event.replyToken;
 	let rplyVal = {};
-	console.log(if(event.source.groupId){event.source.groupId});
+	console.log(event.source.groupId);
 	console.log(event.source.userId);
 	console.log(event);
 	//訊息來到後, 會自動呼叫handleEvent 分類,然後跳到analytics.js進行骰組分析
