@@ -34,15 +34,15 @@ app.get('/', function(req, res) {
 });
 app.post('/', jsonParser, function(req, res) {
 	let event = req.body.events[0];
-	let rplyToken = event.replyToken;
-	let rplyVal = {};
+	//let rplyToken = event.replyToken;
+	//let rplyVal = {};
 	console.log(event.source.groupId);
 	console.log(event.source.userId);
 	console.log(event);
 	//訊息來到後, 會自動呼叫handleEvent 分類,然後跳到analytics.js進行骰組分析
 	//如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
 	try {
-	rplyVal = handleEvent(event);
+	let rplyVal = handleEvent(event);
 	} 
 	catch(e) {
 		console.log('catch error');
@@ -50,7 +50,7 @@ app.post('/', jsonParser, function(req, res) {
 	}
 	//把回應的內容,掉到replyMsgToLine.js傳出去
 	if (rplyVal) {
-	exports.replyMsgToLine.replyMsgToLine(rplyToken, rplyVal, options); 
+	exports.replyMsgToLine.replyMsgToLine(event.replyToken, rplyVal, options); 
 	} else {
 	//console.log('Do not trigger'); 
 	}
