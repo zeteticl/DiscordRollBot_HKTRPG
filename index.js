@@ -39,7 +39,8 @@ app.post('/', jsonParser, function(req, res) {
 	let msg = event.message.text;
 	let rplyToken = event.replyToken;
 	let rplyVal = {};
-	console.log(msg);
+	console.log(event.source.groupId);
+	console.log(event.source.userId);
 	//訊息來到後, 會自動呼叫handleEvent 分類,然後跳到analytics.js進行骰組分析
 	//如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
 	try {
@@ -88,15 +89,3 @@ break;
        break;
   }
 }
-
-
-//
-// Preamble
-//1
-const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI ||  'mongodb://testroll:testroll@ds243768.mlab.com:43768/testroll');
-
-const Cat = mongoose.model('Cat', { name: String });
-
-const kitty = new Cat({ name: 'Zildjian' });
-kitty.save().then(() => console.log('meow'));
