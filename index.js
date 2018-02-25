@@ -34,9 +34,6 @@ app.get('/', function(req, res) {
 });
 app.post('/', jsonParser, function(req, res) {
 	let event = req.body.events[0];
-	let type = event.type;
-	let msgType = event.message.type;
-	let msg = event.message.text;
 	let rplyToken = event.replyToken;
 	let rplyVal = {};
 	console.log(event.source.groupId);
@@ -69,7 +66,7 @@ function handleEvent(event) {
       const message = event.message;
       switch (message.type) {
         case 'text':
-          return exports.analytics.parseInput(event.rplyToken, event.message.text); 
+          return exports.analytics.parseInput(event); 
         default:
            break;
       }
