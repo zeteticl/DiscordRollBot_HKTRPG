@@ -12,10 +12,8 @@ console.log ('ERROR connecting to: ' + uristring + '. ' + err);
 } else {
 console.log ('Succeeded connected to: ' + uristring);
 allswitch = findmongoose();
-
 }
 });
-
 // This is the schema.Note the types, validation and trim
 // statements.They enforce useful constraints on the data.
 var functionSchema = new mongoose.Schema({
@@ -26,8 +24,6 @@ functionswitch: String
 // Compiles the schema into a model, opening (or creating, if
 // nonexistent) the 'PowerUsers' collection in the MongoDB database
 var functionSwitch = mongoose.model('functionSwitchs', functionSchema);
-
-
 // Clear out old data
  
 /*
@@ -39,18 +35,13 @@ console.log ('error deleting old data.');
 */
 
 /*
-
 // Creating more users manually
 var Switch = new functionSwitch ({
- 
 groupid: '002',
 functionswitch: '0' 
 
 });
 Switch.save(function (err) {if (err) console.log ('Error on save!' + err)});
-
-
-
 */
 
 
@@ -63,8 +54,6 @@ if (err) return console.error(err);
 console.log(findall);
 return findall;
 })
-
-
 }
 
 module.exports = {

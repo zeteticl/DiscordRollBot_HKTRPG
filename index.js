@@ -12,8 +12,40 @@ require('fs').readdirSync(__dirname + '/modules/').forEach(function(file) {
     exports[name] = require('./modules/' + file);
   }
 });
-var allswitch = JSON.stringify(exports.mongoose.allswitch);
+var mongoose = require ("mongoose"); // The reason for this demo.
+var allswitch = {};
+// Here we find an appropriate database to connect to, defaulting to
+// localhost if we don't find one.
+var uristring = process.env.mongoURL || 
+'mongodb://testroll:testroll@ds243768.mlab.com:43768/testroll';
+// Makes connection asynchronously.Mongoose will queue up database
+// operations and release them when the connection is complete.
+mongoose.connect(uristring, function (err, res) {
+if (err) { 
+console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+} else {
+console.log ('Succeeded connected to: ' + uristring);
+allswitch = findmongoose();
+}
+});
+// This is the schema.Note the types, validation and trim
+// statements.They enforce useful constraints on the data.
+var functionSchema = new mongoose.Schema({
+groupid: String,
+functionswitch: String 
+});
 
+// Compiles the schema into a model, opening (or creating, if
+// nonexistent) the 'PowerUsers' collection in the MongoDB database
+var functionSwitch = mongoose.model('functionSwitchs', functionSchema);
+function findmongoose() {
+var findall = {};
+functionSwitch.find({},function (err, findall) {
+if (err) return console.error(err);
+console.log(findall);
+return findall;
+})
+}
 
 var options = {
 	host: 'api.line.me',
@@ -36,7 +68,8 @@ app.post('/', jsonParser, function(req, res) {
 	//let rplyToken = event.replyToken;
 	let rplyVal = {};
 	console.log(event.source.groupId);
-	console.log(event.source.userId);	
+	console.log(event.source.userId);
+	
 	/*
 2018-02-25T15:42:02.600415+00:00 app[web.1]: { type: 'message',
 2018-02-25T15:42:02.600418+00:00 app[web.1]:   replyToken: '37b6f6db6f3bf13',
@@ -58,7 +91,6 @@ app.post('/', jsonParser, function(req, res) {
 	}
 	//把回應的內容,掉到replyMsgToLine.js傳出去
 	if (rplyVal) {
-	console.log(allswitch+' where is allswitch');
 	exports.replyMsgToLine.replyMsgToLine(event.replyToken, rplyVal, options); 
 	} else {
 	//console.log('Do not trigger'); 
