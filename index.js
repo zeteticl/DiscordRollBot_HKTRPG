@@ -39,6 +39,17 @@ app.post('/', jsonParser, function(req, res) {
 	console.log(event.source.groupId);
 	console.log(event.source.userId);
 	console.log(event);
+	
+	/*
+2018-02-25T15:42:02.600415+00:00 app[web.1]: { type: 'message',
+2018-02-25T15:42:02.600418+00:00 app[web.1]:   replyToken: '37b6f6db6f3bf13',
+2018-02-25T15:42:02.600421+00:00 app[web.1]:   source: 
+2018-02-25T15:42:02.600422+00:00 app[web.1]:    { groupId: 'C8a4122fcad12d451250c6',
+2018-02-25T15:42:02.600424+00:00 app[web.1]:      userId: 'U1a17e51f220df39f0293d',
+2018-02-25T15:42:02.600426+00:00 app[web.1]:      type: 'group' },
+2018-02-25T15:42:02.600428+00:00 app[web.1]:   timestamp: 1519573321892,
+2018-02-25T15:42:02.600430+00:00 app[web.1]:   message: { type: 'text', id: '7533522361', text: '1d100' } }
+*/
 	//訊息來到後, 會自動呼叫handleEvent 分類,然後跳到analytics.js進行骰組分析
 	//如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
 	try {
