@@ -1,6 +1,3 @@
-// Load `*.js` under roll directory as properties
-//i.e., `User.js` will become `exports['User']` or `exports.User`
-//var http = require ('http');	 // For serving a basic web page.
 var mongoose = require ("mongoose"); // The reason for this demo.
 
 // Here we find an appropriate database to connect to, defaulting to
@@ -52,30 +49,24 @@ functionswitch: '0'
 Switch.save(function (err) {if (err) console.log ('Error on save!' + err)});
 
 
-var kittens = {};
-functionSwitch.find({},function (err, kittens) {
-if (err) return console.error(err);
-console.log(kittens);
-})
+
 */
 
 
 //用來呼叫骰組,新增骰組的話,要寫條件式到下面呼叫 
 //格式是 exports.骰組檔案名字.function名
-function parseInput(input) {
-	
-	
-	/*tarot 指令
-	if (trigger.match(/猜拳/) != null) {
-		return RockPaperScissors(inputStr, mainMsg[1]);
-	}
-*/
+function findmongoose() {
+var findall = {};
+functionSwitch.find({},function (err, findall) {
+if (err) return console.error(err);
+return findall;
+})
 
 
 }
 
 
 module.exports = {
-	parseInput:parseInput
+	findmongoose:findmongoose
 };
 
