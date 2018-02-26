@@ -23,7 +23,7 @@ mongoose.connect(uristring, function (err, res) {
 if (err) { 
 console.log ('ERROR connecting to: ' + uristring + '. ' + err);
 } else {
-allswitch = findmongoose();
+allswitch = exports.mongoose.findmongoose();
 console.log ('Succeeded connected to: ' + uristring);
 }
 });
@@ -38,14 +38,6 @@ functionswitch: String
 // Compiles the schema into a model, opening (or creating, if
 // nonexistent) the 'PowerUsers' collection in the MongoDB database
 var functionSwitch = mongoose.model('functionSwitchs', functionSchema);
-function findmongoose() {
-var findall = {};
-functionSwitch.find({},function (err, findall) {
-if (err) return console.error(err);
-console.log('findall = ' + findall );
-return findall;
-})
-}
 
 var options = {
 	host: 'api.line.me',
@@ -105,7 +97,7 @@ function handleEvent(event) {
       const message = event.message;
       switch (message.type) {
         case 'text':
-          return exports.analytics.parseInput(event); 
+          return exports.analytics.parseInput(event,allswitch); 
         default:
            break;
       }
