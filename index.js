@@ -14,10 +14,7 @@ require('fs').readdirSync(__dirname + '/modules/').forEach(function(file) {
   }
 
 });
-for (;allswitch !=undefined;){
-   setTimeout(function(){allswitch = exports.mongoose.findmongoose(); 
-    }, 3000);
-}
+setTimeout(function(){allswitch = exports.mongoose.findmongoose(); }, 10000);
 console.log(allswitch);
 
 var options = {
