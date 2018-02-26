@@ -15,7 +15,7 @@ require('fs').readdirSync(__dirname + '/modules/').forEach(function(file) {
 
 });
 setTimeout(function(){allswitch = exports.mongoose.findmongoose(); }, 10000);
-setTimeout(function(){console.log(allswitch);}, 13000);
+setTimeout(function(){console.log(exports.mongoose.findmongoose());}, 13000);
 
 var options = {
 	host: 'api.line.me',
