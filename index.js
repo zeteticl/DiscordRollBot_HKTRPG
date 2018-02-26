@@ -13,7 +13,7 @@ require('fs').readdirSync(__dirname + '/modules/').forEach(function(file) {
     exports[name] = require('./modules/' + file);
   }
 });
-var functionSwitch = exports.mongoose.findmongoose.get();
+var functionSwitch = exports.mongoose.findmongoose();
 console.log(functionSwitch);
 
 var options = {
