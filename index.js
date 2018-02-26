@@ -31,13 +31,13 @@ console.log ('Succeeded connected to: ' + uristring);
 // statements.They enforce useful constraints on the data.
 var functionSchema = new mongoose.Schema({
 groupid: String,
+functionname: String,
 functionswitch: String 
 });
 
 // Compiles the schema into a model, opening (or creating, if
 // nonexistent) the 'PowerUsers' collection in the MongoDB database
 var functionSwitch = mongoose.model('functionSwitchs', functionSchema);
-
 function findmongoose() {
 var findall = {};
 functionSwitch.find({},function (err, findall) {
@@ -67,9 +67,6 @@ app.post('/', jsonParser, function(req, res) {
 	let event = req.body.events[0];
 	//let rplyToken = event.replyToken;
 	let rplyVal = {};
-	console.log(event.source.groupId);
-	console.log(event.source.userId);
-	
 	/*
 2018-02-25T15:42:02.600415+00:00 app[web.1]: { type: 'message',
 2018-02-25T15:42:02.600418+00:00 app[web.1]:   replyToken: '37b6f6db6f3bf13',
