@@ -12,7 +12,7 @@ require('fs').readdirSync(__dirname + '/modules/').forEach(function(file) {
     exports[name] = require('./modules/' + file);
   }
 });
-var allswitch = exports.mongoose.allswitch;
+var allswitch = JSON.stringify(exports.mongoose.allswitch);
 
 
 var options = {
@@ -58,7 +58,7 @@ app.post('/', jsonParser, function(req, res) {
 	}
 	//把回應的內容,掉到replyMsgToLine.js傳出去
 	if (rplyVal) {
-	console.log(allswitch.groupId+' where is allswitch');
+	console.log(allswitch+' where is allswitch');
 	exports.replyMsgToLine.replyMsgToLine(event.replyToken, rplyVal, options); 
 	} else {
 	//console.log('Do not trigger'); 
