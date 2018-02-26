@@ -1,10 +1,9 @@
 var mongoose = require ("mongoose"); // The reason for this demo.
-
+var allswitch = {};
 // Here we find an appropriate database to connect to, defaulting to
 // localhost if we don't find one.
 var uristring = process.env.mongoURL || 
 'mongodb://testroll:testroll@ds243768.mlab.com:43768/testroll';
-
 // Makes connection asynchronously.Mongoose will queue up database
 // operations and release them when the connection is complete.
 mongoose.connect(uristring, function (err, res) {
@@ -12,6 +11,8 @@ if (err) {
 console.log ('ERROR connecting to: ' + uristring + '. ' + err);
 } else {
 console.log ('Succeeded connected to: ' + uristring);
+allswitch = findmongoose();
+console.log(allswitch);
 }
 });
 
@@ -65,8 +66,8 @@ return findall;
 
 }
 
-
 module.exports = {
-	findmongoose:findmongoose
+	findmongoose:findmongoose,
+	allswitch:allswitch
 };
 
