@@ -12,9 +12,13 @@ require('fs').readdirSync(__dirname + '/modules/').forEach(function(file) {
     exports[name] = require('./modules/' + file);
   }
 });
-
-
-console.log(exports.mongoose.allswitch);
+var allswitch = exports.mongoose.allswitch(function (err, res) {
+if (err) { 
+console.log (err);
+} else {
+console.log (res + 'Done');
+}
+});
 
 var options = {
 	host: 'api.line.me',
