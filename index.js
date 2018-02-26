@@ -12,7 +12,7 @@ require('fs').readdirSync(__dirname + '/modules/').forEach(function(file) {
     exports[name] = require('./modules/' + file);
   }
 });
-var mongoose = require ("mongoose"); // The reason for this demo.
+var mongoose = require ("mongoose"); // The reason for this.
 var allswitch = {};
 // Here we find an appropriate database to connect to, defaulting to
 // localhost if we don't find one.
@@ -24,8 +24,8 @@ mongoose.connect(uristring, function (err, res) {
 if (err) { 
 console.log ('ERROR connecting to: ' + uristring + '. ' + err);
 } else {
-console.log ('Succeeded connected to: ' + uristring);
 allswitch = findmongoose();
+console.log ('Succeeded connected to: ' + uristring+ ' '+ allswitch);
 }
 });
 // This is the schema.Note the types, validation and trim
