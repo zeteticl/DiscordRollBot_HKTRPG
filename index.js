@@ -25,7 +25,7 @@ if (err) {
 console.log ('ERROR connecting to: ' + uristring + '. ' + err);
 } else {
 allswitch = findmongoose();
-console.log ('Succeeded connected to: ' + uristring+ ' '+ allswitch);
+console.log ('Succeeded connected to: ' + uristring);
 }
 });
 // This is the schema.Note the types, validation and trim
