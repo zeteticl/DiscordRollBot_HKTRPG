@@ -14,6 +14,7 @@ require('fs').readdirSync(__dirname + '/modules/').forEach(function(file) {
 });
 var allswitch = exports.mongoose.allswitch;
 
+
 var options = {
 	host: 'api.line.me',
 	port: 443,
@@ -60,6 +61,7 @@ app.post('/', jsonParser, function(req, res) {
 	//把回應的內容,掉到replyMsgToLine.js傳出去
 	if (rplyVal) {
 	exports.replyMsgToLine.replyMsgToLine(event.replyToken, rplyVal, options); 
+		console.log(allswitch);
 	} else {
 	//console.log('Do not trigger'); 
 	}
