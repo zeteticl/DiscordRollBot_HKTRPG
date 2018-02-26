@@ -4,10 +4,9 @@ var app = express();
 var jsonParser = bodyParser.json();
 var channelAccessToken = process.env.LINE_CHANNEL_ACCESSTOKEN;
 var channelSecret = process.env.LINE_CHANNEL_SECRET;
+var allswitch = {};
 // Load `*.js` under modules directory as properties
 //  i.e., `User.js` will become `exports['User']` or `exports.User`
-var exports = null;
-function fsread(callback){
 require('fs').readdirSync(__dirname + '/modules/').forEach(function(file) {
   if (file.match(/\.js$/) !== null && file !== 'index.js') {
     var name = file.replace('.js', '');
@@ -15,11 +14,11 @@ require('fs').readdirSync(__dirname + '/modules/').forEach(function(file) {
   }
 
 });
-};
-
-fsread(exports.mongoose.findmongoose);
-
-console.log(functionSwitch);
+for (;allswitch !=undefined;){
+   setTimeout(function(){allswitch = exports.mongoose.findmongoose(); 
+    }, 3000);
+}
+console.log(allswitch);
 
 var options = {
 	host: 'api.line.me',
