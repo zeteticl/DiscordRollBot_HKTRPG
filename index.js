@@ -38,6 +38,7 @@ functionswitch: String
 // Compiles the schema into a model, opening (or creating, if
 // nonexistent) the 'PowerUsers' collection in the MongoDB database
 var functionSwitch = mongoose.model('functionSwitchs', functionSchema);
+
 function findmongoose() {
 var findall = {};
 functionSwitch.find({},function (err, findall) {
