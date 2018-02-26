@@ -12,7 +12,7 @@ console.log ('ERROR connecting to: ' + uristring + '. ' + err);
 } else {
 console.log ('Succeeded connected to: ' + uristring);
 allswitch = findmongoose();
-console.log(allswitch);
+
 }
 });
 
@@ -60,6 +60,7 @@ function findmongoose() {
 var findall = {};
 functionSwitch.find({},function (err, findall) {
 if (err) return console.error(err);
+console.log(findall);
 return findall;
 })
 
