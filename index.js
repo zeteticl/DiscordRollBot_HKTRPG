@@ -36,9 +36,7 @@ app.post('/', jsonParser, function(req, res) {
 	//let rplyToken = event.replyToken;
 	let rplyVal = {};
 	console.log(event.source.groupId);
-	console.log(event.source.userId);
-	console.log(event);
-	
+	console.log(event.source.userId);	
 	/*
 2018-02-25T15:42:02.600415+00:00 app[web.1]: { type: 'message',
 2018-02-25T15:42:02.600418+00:00 app[web.1]:   replyToken: '37b6f6db6f3bf13',
