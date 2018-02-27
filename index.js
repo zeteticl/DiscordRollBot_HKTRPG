@@ -40,7 +40,7 @@ function findmongoose() {
 var findall = {};
 functionSwitch.find({},function (err, findall) {
 if (err) return console.error(err);
-console.log(findall);
+console.log('findmongoose = '+ findall);
 return findall;
 })
 }
