@@ -27,7 +27,6 @@ function findmongoose(functionSwitch) {
 var findall = {};
 functionSwitch.find({},function (err, findall) {
 if (err) return console.error(err);
-console.log('findmongoose = '+ findall);
 return findall;
 })
 }
