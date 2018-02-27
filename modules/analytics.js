@@ -9,7 +9,7 @@ require('fs').readdirSync('./roll/').forEach(function(file) {
 
 //用來呼叫骰組,新增骰組的話,要寫條件式到下面呼叫 
 //格式是 exports.骰組檔案名字.function名
-function parseInput(input) {
+function parseInput(input,allswitch) {
 	//console.log('InputStr: ' + inputStr);
 	_isNaN = function(obj) 	{
 	return isNaN(parseInt(obj));  
@@ -87,6 +87,9 @@ function parseInput(input) {
 	if (trigger.match(/鴨霸獸|巴獸/) != null) return exports.funny.randomReply() ;	
 	
 	
+	if(allswitch.groupid ==input.groupId && allswitch.functionname =='luck' && allswitch.functionswitch !='off') console.log('luck allswitch test');
+	
+	if(allswitch.groupid ==input.groupId ) console.log('Hi, It is allswitch test');
 	
 	if (trigger.match(/運氣|運勢/) != null) return exports.funny.randomLuck(mainMsg) ; //占卜運氣		
 	
