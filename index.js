@@ -23,21 +23,22 @@ mongoose.connect(uristring, function (err, res) {
 if (err) { 
 console.log ('ERROR connecting to: ' + uristring + '. ' + err);
 } else {
-allswitch = exports.mongoose.findmongoose();
-console.log ('Succeeded connected to: ' + uristring);
-}
-});
-// This is the schema.Note the types, validation and trim
-// statements.They enforce useful constraints on the data.
 var functionSchema = new mongoose.Schema({
 groupid: String,
 functionname: String,
 functionswitch: String 
 });
+var functionSwitch = mongoose.model('functionSwitchs', functionSchema);
+allswitch = exports.mongoose.findmongoose(functionSwitch);
+console.log ('Succeeded connected to: ' + uristring);
+}
+});
+// This is the schema.Note the types, validation and trim
+// statements.They enforce useful constraints on the data.
+
 
 // Compiles the schema into a model, opening (or creating, if
 // nonexistent) the 'PowerUsers' collection in the MongoDB database
-var functionSwitch = mongoose.model('functionSwitchs', functionSchema);
 
 var options = {
 	host: 'api.line.me',
