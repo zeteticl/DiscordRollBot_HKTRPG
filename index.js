@@ -13,7 +13,7 @@ require('fs').readdirSync(__dirname + '/modules/').forEach(function(file) {
   }
 });
 var mongoose = require ("mongoose"); // The reason for this.
-var allswitch = null;
+allswitch = null;
 // Here we find an appropriate database to connect to, defaulting to
 // localhost if we don't find one.
 var uristring = process.env.mongoURL;
@@ -24,7 +24,7 @@ mongoose.connect(uristring, function (err, res) {
 if (err) { 
 console.log ('ERROR connecting to: ' + uristring + '. ' + err);
 } else {
-allswitch = findmongoose();
+allswitch = exports.mongoose.findmongoose(functionSwitch);
 console.log ('Succeeded connected to: ' + uristring);
 }
 });
