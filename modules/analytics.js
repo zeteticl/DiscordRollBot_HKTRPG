@@ -89,7 +89,7 @@ function parseInput(input,allswitch) {
 	
 	if(allswitch.groupid ==input.groupId && allswitch.functionname =='luck' && allswitch.functionswitch !='off') console.log('luck allswitch test');
 	console.log(allswitch.groupid);
-	console.log(input.groupId);	
+	console.log(input.source.groupId);	
 	
 	if(allswitch.groupid ==input.groupId ) console.log('Hi, It is allswitch test');
 	
