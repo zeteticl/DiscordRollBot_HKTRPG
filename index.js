@@ -13,29 +13,29 @@ require('fs').readdirSync(__dirname + '/modules/').forEach(function(file) {
   }
 });
 var mongoose = require ("mongoose"); // The reason for this.
-var allswitch = {};
+var allswitch = null;
 // Here we find an appropriate database to connect to, defaulting to
 // localhost if we don't find one.
 var uristring = process.env.mongoURL;
 // Makes connection asynchronously.Mongoose will queue up database
 // operations and release them when the connection is complete.
+
 mongoose.connect(uristring, function (err, res) {
 if (err) { 
 console.log ('ERROR connecting to: ' + uristring + '. ' + err);
 } else {
-var functionSchema = new mongoose.Schema({
-groupid: String,
-functionname: String,
-functionswitch: String 
-});
-var functionSwitch = mongoose.model('functionSwitchs', functionSchema);
 allswitch = exports.mongoose.findmongoose(functionSwitch);
 console.log ('Succeeded connected to: ' + uristring);
 }
 });
 // This is the schema.Note the types, validation and trim
 // statements.They enforce useful constraints on the data.
-
+var functionSchema = new mongoose.Schema({
+groupid: String,
+functionname: String,
+functionswitch: String 
+});
+var functionSwitch = mongoose.model('functionSwitchs', functionSchema);
 
 // Compiles the schema into a model, opening (or creating, if
 // nonexistent) the 'PowerUsers' collection in the MongoDB database
@@ -98,6 +98,7 @@ function handleEvent(event) {
       const message = event.message;
       switch (message.type) {
         case 'text':
+		console.log('function handleEvent(event) '+ allswitch);
           return exports.analytics.parseInput(event,allswitch); 
         default:
            break;
