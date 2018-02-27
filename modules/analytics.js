@@ -19,7 +19,9 @@ function parseInput(input,allswitch) {
 	let msgSplitor = (/\S+/ig);	
 	let mainMsg = inputStr.match(msgSplitor); //定義輸入字串
 	let trigger = mainMsg[0].toString().toLowerCase(); //指定啟動詞在第一個詞&把大階強制轉成細階
-
+	
+	console.log(allswitch);
+	console.log(input);	
 	//在下面位置開始分析trigger
 
 	//普通ROLL擲骰判定在此	
@@ -88,8 +90,7 @@ function parseInput(input,allswitch) {
 	
 	
 	if(allswitch.groupid ==input.groupId && allswitch.functionname =='luck' && allswitch.functionswitch !='off') console.log('luck allswitch test');
-	console.log(allswitch);
-	console.log(input);	
+
 	
 	if(allswitch.groupid ==input.groupId ) console.log('Hi, It is allswitch test');
 	
