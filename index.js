@@ -24,7 +24,7 @@ mongoose.connect(uristring, function (err, res) {
 if (err) { 
 console.log ('ERROR connecting to: ' + uristring + '. ' + err);
 } else {
-allswitch = exports.mongoose.findmongoose(functionSwitch);
+allswitch = findmongoose();
 console.log ('Succeeded connected to: ' + uristring);
 }
 });
@@ -36,6 +36,14 @@ functionname: String,
 functionswitch: String 
 });
 var functionSwitch = mongoose.model('functionSwitchs', functionSchema);
+function findmongoose() {
+var findall = {};
+functionSwitch.find({},function (err, findall) {
+if (err) return console.error(err);
+console.log(findall);
+return findall;
+})
+}
 
 // Compiles the schema into a model, opening (or creating, if
 // nonexistent) the 'PowerUsers' collection in the MongoDB database
