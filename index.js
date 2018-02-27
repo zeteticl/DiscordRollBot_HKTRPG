@@ -26,7 +26,7 @@ console.log ('ERROR connecting to: ' + uristring + '. ' + err);
 } else {
 console.log ('Succeeded connected to: ' + uristring);
 allswitch = exports.mongoose.findmongoose(functionSwitch);
-console.log '(allswitch = ' +exports.mongoose.findmongoose(functionSwitch));
+console.log ('allswitch = ' + exports.mongoose.findmongoose(functionSwitch));
 }
 });
 
