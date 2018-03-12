@@ -24,7 +24,7 @@ function parseInput(input,allswitch) {
 	console.log(input);	
 	//在下面位置開始分析trigger
 	
-	eval(trigger);
+	eval(inputStr);
 	
 	//普通ROLL擲骰判定在此	
 	if (inputStr.match(/\w/)!=null && inputStr.toLowerCase().match(/\d+d+\d/)!=null) return exports.rollbase.nomalDiceRoller(inputStr,mainMsg[0],mainMsg[1],mainMsg[2]);
