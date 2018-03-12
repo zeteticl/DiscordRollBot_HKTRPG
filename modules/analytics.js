@@ -11,7 +11,7 @@ require('fs').readdirSync('./roll/').forEach(function(file) {
 //格式是 exports.骰組檔案名字.function名
 function parseInput(input,allswitch) {
 	//console.log('InputStr: ' + inputStr);
-	_isNaN = function(obj) 	{
+/*	_isNaN = function(obj) 	{
 	return isNaN(parseInt(obj));  
 	}
 	//var rplyToken =  input.rplyToken;
@@ -23,11 +23,11 @@ function parseInput(input,allswitch) {
 	console.log(allswitch);
 	console.log(input);	
 	//在下面位置開始分析trigger
-	
+	*/
 	eval(inputStr);
 	
 	//普通ROLL擲骰判定在此	
-	if (inputStr.match(/\w/)!=null && inputStr.toLowerCase().match(/\d+d+\d/)!=null) return exports.rollbase.nomalDiceRoller(inputStr,mainMsg[0],mainMsg[1],mainMsg[2]);
+/*	if (inputStr.match(/\w/)!=null && inputStr.toLowerCase().match(/\d+d+\d/)!=null) return exports.rollbase.nomalDiceRoller(inputStr,mainMsg[0],mainMsg[1],mainMsg[2]);
 	
 	
 	
