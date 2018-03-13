@@ -36,7 +36,6 @@ app.post('/', jsonParser, function(req, res) {
 	
 	let event = req.body.events[0];
 	
-	eval(event.message.text);
 	//let rplyToken = event.replyToken;
 	let rplyVal = {};
 	/*
