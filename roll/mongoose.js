@@ -18,7 +18,7 @@ function findmongoose(id) {
             return 0;
         }
 
-        console.log('date functionswitch = ' + data.functionswitch);
+        console.log('date functionswitch = ' + data);
         return data.functionswitch;
     })
 
