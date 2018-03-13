@@ -10,7 +10,7 @@ function switchfind(id, name) {
     mongodb.functionSwitch.findOne({ groupid: id, functionname: name }, function (err, data) {
         if (err) {
             console.log(err);
-            return
+            return 1;
         }
 
         if (data == null) {
