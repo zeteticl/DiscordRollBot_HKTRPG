@@ -21,8 +21,11 @@ async function parseInput(input) {
 	let trigger = mainMsg[0].toString().toLowerCase(); //指定啟動詞在第一個詞&把大階強制轉成細階
 	console.log(input);
 	//switchfind
+	
+	var val = await exports.mongoose.switchfind(mainMsg[1], mainMsg[2])
+	console.log(val)
 
-	if (await exports.mongoose.switchfind(mainMsg[1], mainMsg[2]) == 0) return;
+	
 
 	//在下面位置開始分析trigger
 
