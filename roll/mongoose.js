@@ -18,8 +18,8 @@ function findmongoose(id) {
             return 0;
         }
 
-        console.log('date' + data);
-        return 1;
+        console.log('date functionswitch = ' + data.functionswitch);
+        return data.functionswitch;
     })
 
 
