@@ -10,12 +10,12 @@ var rply = { type: 'text' }; //type是必需的,但可以更改
     mongodb.functionSwitch.findOne({ groupid: id, functionname: name }, function (err, data) {
         if (err) {
             console.log(err);
-            return 1;
+            return null;
         }
 
         if (data == null) {
             console.log("No record found")
-            return 1;
+            return null;
         }
         console.log('date = ' + data);
         console.log('data.functionswitch = ' + data.functionswitch);

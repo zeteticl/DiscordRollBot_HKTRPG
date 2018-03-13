@@ -22,12 +22,9 @@ function parseInput(input) {
 	console.log(input);
 	//switchfind
 
-	if (exports.mongoose.switchfind(mainMsg[1], mainMsg[2]) == '0') {
+	if (exports.mongoose.switchfind(mainMsg[1], mainMsg[2]) != null) {
 		return null;
 	}
-
-
-
 	//在下面位置開始分析trigger
 
 	//普通ROLL擲骰判定在此	
