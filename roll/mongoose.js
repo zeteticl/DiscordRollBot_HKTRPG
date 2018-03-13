@@ -1,11 +1,13 @@
 var rollbase = require('./rollbase.js');
+var mongodb = require('../mondules/mongoose.js');
 var rply ={type : 'text'}; //type是必需的,但可以更改
 
 ////////////////////////////////////////
 //////////////// 
 ////////////////////////////////////////		
+
 function findmongoose(id) {
-    functionSwitch.find({ groupid: id }, function (err, data) {
+    mongodb.functionSwitch.find({ groupid: id }, function (err, data) {
         if (err) {
             console.log(err);
             return
