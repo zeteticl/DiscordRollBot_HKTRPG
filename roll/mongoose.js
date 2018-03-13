@@ -1,5 +1,5 @@
 var rollbase = require('./rollbase.js');
-var mongodb = require('../mondules/mongoose.js');
+var mongodb = require('../modules/mongoose.js');
 var rply ={type : 'text'}; //type是必需的,但可以更改
 
 ////////////////////////////////////////
