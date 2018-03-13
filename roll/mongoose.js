@@ -6,8 +6,8 @@ var rply = { type: 'text' }; //type是必需的,但可以更改
 //////////////// 
 ////////////////////////////////////////		
 
-function findmongoose(id, functionname) {
-    mongodb.functionSwitch.findOne({ groupid: id,functionname: "luck" }, function (err, data) {
+function switchfind(id, name) {
+    mongodb.functionSwitch.findOne({ groupid: id, functionname: name }, function (err, data) {
         if (err) {
             console.log(err);
             return
@@ -24,5 +24,5 @@ function findmongoose(id, functionname) {
 };
 
 module.exports = {
-    findmongoose: findmongoose
+    switchfind: switchfind
 };
