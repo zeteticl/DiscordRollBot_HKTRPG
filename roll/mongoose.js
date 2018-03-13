@@ -13,7 +13,7 @@ function findmongoose(id) {
             return
         }
 
-        if (data == 0) {
+        if (data == null) {
             console.log("No record found")
             return 0;
         }
