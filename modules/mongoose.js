@@ -25,24 +25,7 @@ var functionSwitch = mongoose.model('functionSwitchs', functionSchema);
 
 
 
-function findmongoose(groupid) {
-    functionSwitch.find({ location: groupid }, function (err, data) {
-        if (err) {
-            console.log(err);
-            return
-        }
 
-        if (data.length == 0) {
-            console.log("No record found")
-            return 0;
-        }
-
-        console.log(data[0].name);
-        return 1;
-    })
-
-
-};
 
 module.exports = {
 	findmongoose:findmongoose
