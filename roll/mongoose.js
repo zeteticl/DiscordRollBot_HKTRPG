@@ -1,6 +1,6 @@
 var rollbase = require('./rollbase.js');
 var mongodb = require('../modules/mongoose.js');
-var rply ={type : 'text'}; //type是必需的,但可以更改
+var rply = { type: 'text' }; //type是必需的,但可以更改
 
 ////////////////////////////////////////
 //////////////// 
@@ -18,7 +18,7 @@ function findmongoose(id) {
             return 0;
         }
 
-        console.log(data[0].name);
+        console.log('date' + data);
         return 1;
     })
 
@@ -26,5 +26,5 @@ function findmongoose(id) {
 };
 
 module.exports = {
-	findmongoose:findmongoose
+    findmongoose: findmongoose
 };

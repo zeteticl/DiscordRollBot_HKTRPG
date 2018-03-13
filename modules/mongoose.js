@@ -26,7 +26,7 @@ var functionSwitch = mongoose.model('functionSwitchs', functionSchema);
 
 
 module.exports = {
-	functionSwitch:functionSwitch
+    functionSwitch: functionSwitch
 };
 
 

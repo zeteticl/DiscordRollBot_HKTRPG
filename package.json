@@ -1,5 +1,5 @@
 {
-  "name": "Zetetic",
+  "name": "zetetic",
   "version": "1.0.0",
   "description": "Zetetic Line Bot",
   "engines": {
@@ -10,13 +10,13 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "4.13.3",
     "body-parser": "1.15.2",
-	"mongoose": "5.0.6"
+    "express": "^4.13.3",
+    "mongoose": "5.0.6"
   },
   "keywords": [
     "LeoLi",
-	"Zetetic",
+    "Zetetic",
     "Line"
   ],
   "license": "MIT"
