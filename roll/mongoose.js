@@ -18,7 +18,15 @@ function findmongoose(id) {
             return 0;
         }
 
-        console.log('date functionswitch = ' + data);
+        console.log('date = ' + data);
+        console.log('date _id = ' + data._id);
+        console.log('date functionswitch = ' + data.functionswitch);
+        console.log('date groupid = ' + data.groupid);
+        console.log('date [0] = ' + data[0]);
+        console.log('date [1] = ' + data[1]);
+        console.log('date [2] = ' + data[2]);
+        console.log('date [3] = ' + data[3]);
+
         return data.functionswitch;
     })
 
