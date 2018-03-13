@@ -22,7 +22,7 @@ function parseInput(input) {
 	console.log(input);
 	//switchfind
 
-	if (exports.mongoose.switchfind(mainMsg[1], mainMsg[2]) == 0) return;
+	if (exports.mongoose.switchfind(mainMsg[1], mainMsg[2]) == '0') return null;
 	else
 
 

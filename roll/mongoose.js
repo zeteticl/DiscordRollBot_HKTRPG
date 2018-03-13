@@ -18,6 +18,7 @@ function switchfind(id, name) {
             return 1;
         }
         console.log('date = ' + data);
+        console.log('data.functionswitch = ' + data.functionswitch);
         return data.functionswitch;
     })
 
