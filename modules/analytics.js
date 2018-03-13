@@ -22,7 +22,7 @@ function parseInput(input) {
 	console.log(input);
 	//switchfind
 
-	if (exports.mongoose.switchfind(mainMsg[1], mainMsg[2]) != 9) {
+	if (exports.mongoose.switchfind(mainMsg[1], mainMsg[2]) ==0) {
 		return null;
 	}
 	//在下面位置開始分析trigger2
