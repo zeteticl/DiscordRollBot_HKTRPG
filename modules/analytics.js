@@ -89,10 +89,7 @@ function parseInput(input,allswitch) {
 	if (trigger.match(/鴨霸獸|巴獸/) != null) return exports.funny.randomReply() ;	
 	
 	
-	if(allswitch.groupid ==input.groupId && allswitch.functionname =='luck' && allswitch.functionswitch !='off') console.log('luck allswitch test');
-
-	
-	if(allswitch.groupid ==input.groupId ) console.log('Hi, It is allswitch test');
+	if (trigger.match(/^test/) != null) return exports.mongoose.findmongoose(mainMsg[1]) ;		
 	
 	if (trigger.match(/運氣|運勢/) != null) return exports.funny.randomLuck(mainMsg) ; //占卜運氣		
 	

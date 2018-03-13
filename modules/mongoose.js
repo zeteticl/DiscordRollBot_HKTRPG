@@ -1,35 +1,48 @@
+const mongoose = require('mongoose');
+let uristring = process.env.mongoURL ||
+    'mongodb://testroll:testroll@ds243768.mlab.com:43768/testroll';
+mongoose.connect(uristring);
 
-// Clear out old data
-/*
-functionSwitch.remove({ groupid: '002'}, function(err) {
-if (err) {
-console.log ('error deleting old data.');
-}
+mongoose.connect(uristring, function (err, res) {
+    if (err) {
+        console.log('ERROR connecting to: ' + uristring + '. ' + err);
+    } else {
+        console.log('Succeeded connected to: ' + uristring);
+        // console.log('allswitch: ' + allswitch);
+
+    }
 });
-*/
 
-/*
-// Creating more users manually
-var Switch = new functionSwitch ({
-groupid: '002',
-functionswitch: '0' 
-
+var functionSchema = new mongoose.Schema({
+    groupid: String,
+    functionname: String,
+    functionswitch: String
 });
-Switch.save(function (err) {if (err) console.log ('Error on save!' + err)});
-*/
+
+// Compiles the schema into a model, opening (or creating, if
+// nonexistent) the 'PowerUsers' collection in the MongoDB database
+var functionSwitch = mongoose.model('functionSwitchs', functionSchema);
 
 
 
+function findmongoose(groupid) {
+    functionSwitch.find({ location: groupid }, function (err, data) {
+        if (err) {
+            console.log(err);
+            return
+        }
 
-//用來呼叫骰組,新增骰組的話,要寫條件式到下面呼叫 
-//格式是 exports.骰組檔案名字.function名
-function findmongoose(functionSwitch) {
-var findall = {};
-functionSwitch.find({},function (err, findall) {
-if (err) return console.error(err);
-return findall;
-})
-}
+        if (data.length == 0) {
+            console.log("No record found")
+            return 0;
+        }
+
+        console.log(data[0].name);
+        return 1;
+    })
+
+
+};
 
 module.exports = {
 	findmongoose:findmongoose
