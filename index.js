@@ -76,8 +76,7 @@ function handleEvent(event) {
       const message = event.message;
       switch (message.type) {
         case 'text':
-		console.log('function handleEvent(event) '+ allswitch);
-          return exports.analytics.parseInput(event,allswitch); 
+          return exports.analytics.parseInput(event); 
         default:
            break;
       }
