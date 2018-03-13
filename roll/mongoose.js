@@ -7,7 +7,7 @@ var rply = { type: 'text' }; //type是必需的,但可以更改
 ////////////////////////////////////////		
 
 function findmongoose(id) {
-    mongodb.functionSwitch.find({ groupid: id }, function (err, data) {
+    mongodb.functionSwitch.findOne({ groupid: id }, function (err, data) {
         if (err) {
             console.log(err);
             return
