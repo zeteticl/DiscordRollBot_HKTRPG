@@ -26,7 +26,7 @@ function parseInput(input) {
 			//switchfind
 		},
 		function () {
-		if( exports.mongoose.switchfind(mainMsg[1], mainMsg[2])== 'off') return ;
+		//if( exports.mongoose.switchfind(mainMsg[1], mainMsg[2])== 'off') return ;
 		},
 		function () {
 			//console.log(val);
