@@ -25,7 +25,7 @@ function parseInput(input) {
 	if (exports.mongoose.switchfind(mainMsg[1], mainMsg[2]) != 9) {
 		return null;
 	}
-	//在下面位置開始分析trigger
+	//在下面位置開始分析trigger2
 
 	//普通ROLL擲骰判定在此	
 	else {
