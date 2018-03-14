@@ -18,8 +18,8 @@ var rply = { type: 'text' }; //type是必需的,但可以更改
             return null;
         }
         else
-        console.log('date = ' + data);
-        console.log('data.functionswitch = ' + data.functionswitch);
+        //console.log('date = ' + data);
+        //console.log('data.functionswitch = ' + data.functionswitch);
         return data.functionswitch;
     })
 };

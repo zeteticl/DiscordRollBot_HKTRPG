@@ -19,9 +19,9 @@ function parseInput(input) {
 	let msgSplitor = (/\S+/ig);
 	let mainMsg = inputStr.match(msgSplitor); //定義輸入字串
 	let trigger = mainMsg[0].toString().toLowerCase(); //指定啟動詞在第一個詞&把大階強制轉成細階
-	console.log(input);
+	//console.log(input);
 	//switchfind
-	console.log((exports.mongoose.switchfind(mainMsg[1], mainMsg[2]))); 
+	console.log("return = "+exports.mongoose.switchfind(mainMsg[1], mainMsg[2])); 
 	if (exports.mongoose.switchfind(mainMsg[1], mainMsg[2]) != null) {
 		return null;
 	}
