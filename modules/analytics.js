@@ -21,7 +21,7 @@ function parseInput(input) {
 	let trigger = mainMsg[0].toString().toLowerCase(); //指定啟動詞在第一個詞&把大階強制轉成細階
 	//console.log(input);
 	//switchfind
-	//console.log("return = "+exports.mongoose.switchfind(mainMsg[1], mainMsg[2]).functionswitch); 
+	console.log("return = "+exports.mongoose.switchfind(mainMsg[1], mainMsg[2])); 
 	if (exports.mongoose.switchfind(mainMsg[1], mainMsg[2]) == 0) {
 		return null;
 	}
