@@ -9,7 +9,7 @@ require('fs').readdirSync('./roll/').forEach(function (file) {
 
 //用來呼叫骰組,新增骰組的話,要寫條件式到下面呼叫 
 //格式是 exports.骰組檔案名字.function名
-function parseInput(input) {
+async function parseInput(input) {
 	//console.log('InputStr: ' + inputStr);
 	_isNaN = function (obj) {
 		return isNaN(parseInt(obj));
@@ -21,8 +21,8 @@ function parseInput(input) {
 	let trigger = mainMsg[0].toString().toLowerCase(); //指定啟動詞在第一個詞&把大階強制轉成細階
 	//console.log(input);
 	//switchfind
-	console.log("return = "+exports.mongoose.switchfind(mainMsg[1], mainMsg[2])); 
-	if (exports.mongoose.switchfind(mainMsg[1], mainMsg[2]) == '0') {
+	console.log("return = "+ await exports.mongoose.switchfind(mainMsg[1], mainMsg[2])); 
+	if (await exports.mongoose.switchfind(mainMsg[1], mainMsg[2]) == '0') {
 		return null;
 	}
 	//在下面位置開始分析trigger2
