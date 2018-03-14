@@ -13,7 +13,7 @@ var rply = { type: 'text' }; //type是必需的,但可以更改
             return null;
         }
 
-       else if (data == null) {
+       else if (!data) {
             console.log("No record found")
             return null;
         }

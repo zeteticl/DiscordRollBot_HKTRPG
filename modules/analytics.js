@@ -9,7 +9,7 @@ require('fs').readdirSync('./roll/').forEach(function (file) {
 
 //用來呼叫骰組,新增骰組的話,要寫條件式到下面呼叫 
 //格式是 exports.骰組檔案名字.function名
-async function parseInput(input) {
+function parseInput(input) {
 	//console.log('InputStr: ' + inputStr);
 	_isNaN = function (obj) {
 		return isNaN(parseInt(obj));
@@ -22,12 +22,13 @@ async function parseInput(input) {
 	console.log(input);
 	//switchfind
 
-	var check = await exports.mongoose.switchfind(mainMsg[1], mainMsg[2]);
-	console.log(check);
+	if (exports.mongoose.switchfind(mainMsg[1], mainMsg[2]) != null) {
+		return null;
+	}
 	//在下面位置開始分析trigger2
 
 	//普通ROLL擲骰判定在此	
-	
+	else {
 		if (inputStr.match(/\w/) != null && inputStr.toLowerCase().match(/\d+d+\d/) != null) return exports.rollbase.nomalDiceRoller(inputStr, mainMsg[0], mainMsg[1], mainMsg[2]);
 
 		//xBy>A 指令開始於此
@@ -104,7 +105,7 @@ async function parseInput(input) {
 	*/
 
 	}
-
+}
 
 
 module.exports = {
