@@ -22,7 +22,7 @@ async function parseInput(input) {
 	console.log(input);
 	//switchfind
 	var check = await exports.mongoose.switchfind(mainMsg[1], mainMsg[2]);
-	if (check != null) {
+	if (check == null) {
 		return null;
 	}
 	//在下面位置開始分析trigger2
