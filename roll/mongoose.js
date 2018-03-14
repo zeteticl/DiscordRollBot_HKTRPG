@@ -22,6 +22,7 @@ var rply = { type: 'text' }; //type是必需的,但可以更改
         //console.log('data.functionswitch = ' + data.functionswitch);
         return '0';
     })
+    return data;
 };
 
 module.exports = {
