@@ -20,7 +20,7 @@ var rply = { type: 'text' }; //type是必需的,但可以更改
         else
         //console.log('date = ' + data);
         //console.log('data.functionswitch = ' + data.functionswitch);
-        return data.functionswitch;
+        return 0;
     })
 };
 
