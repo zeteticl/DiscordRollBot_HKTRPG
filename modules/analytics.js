@@ -21,17 +21,15 @@ function parseInput(rplyToken, inputStr) {
 
 	exports.mongoose.switchfind(mainMsg[1], mainMsg[2], function (functionswitch) {
 		console.log('functionswitch = ' + functionswitch)
-		/*
+		
 		if (functionswitch === null) {
 			console.log('HERE === NULL ')
 		}
-		else if (functionswitch == 2) {
-			console.log('HERE != 2')
-			return
+		if (functionswitch == 0) {
+			console.log('HERE != 0')
+			return;
 		}
-
-		*/
-		 if (functionswitch != '898') {
+		else if (functionswitch != 0 ) {
 			console.log('HERE != 0')
 
 			//在下面位置開始分析trigger
