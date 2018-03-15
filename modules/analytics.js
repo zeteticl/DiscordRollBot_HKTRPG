@@ -21,6 +21,7 @@ function parseInput(rplyToken, inputStr) {
 
 	exports.mongoose.switchfind(mainMsg[1], mainMsg[2], function (functionswitch) {
 		console.log('functionswitch = ' + functionswitch)
+		/*
 		if (functionswitch === null) {
 			console.log('HERE === NULL ')
 		}
@@ -29,7 +30,8 @@ function parseInput(rplyToken, inputStr) {
 			return
 		}
 
-		else if (functionswitch != '898') {
+		*/
+		 if (functionswitch != '898') {
 			console.log('HERE != 0')
 
 			//在下面位置開始分析trigger
