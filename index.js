@@ -64,7 +64,8 @@ function handleEvent(event) {
     case 'message':
       const message = event.message;
       switch (message.type) {
-        case 'text':
+				case 'text':
+				console.log(exports.analytics.parseInput(event.rplyToken, event.message.text))
           return exports.analytics.parseInput(event.rplyToken, event.message.text); 
         default:
            break;
