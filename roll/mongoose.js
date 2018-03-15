@@ -21,12 +21,10 @@ function switchfind(id, name, callback) {
             callback(null);
             return;
         }
-        else {
             console.log('date = ' + data);
             console.log('data.functionswitch = ' + data.functionswitch);
             callback(data.functionswitch);
-            return;
-        }
+        
     })
 };
 
