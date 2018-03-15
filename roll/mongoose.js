@@ -24,7 +24,7 @@ function switchfind(id, name, callback2) {
         console.log('date = ' + data);
         console.log('data.functionswitch = ' + data.functionswitch);
         callback2(data.functionswitch);
-
+        return;
     })
 };
 
