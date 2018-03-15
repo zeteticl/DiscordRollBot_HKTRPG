@@ -1,4 +1,4 @@
-# RoboYabaso@HKTRPG  V1.30：開放原始碼的LINE骰子機器人
+# RoboYabaso@HKTRPG  V1.40：開放原始碼的LINE骰子機器人
 
 關於RoboYabaso
 ==
@@ -79,7 +79,7 @@ Step3：將LineBot部署到Heroku
 --
 
 * 按一下下面這個按鈕</br>
-按它→[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)←按它</br></br></br>
+按它→[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/zeteticl/RoboYabaso)←按它</br></br></br>
 ---
 
 * 你會看到這個</br>
@@ -136,11 +136,13 @@ Step5：鏈接Line與Heroku
 https://github.com/zeteticl/TrpgLineBot-php
 
 下一部希望更新是
-1. 幫助的顯示方式可以更漂亮
-2. DX3 開發
+1. MONGODB (但好難啊....會有高手幫忙嗎....不想用GOOGLE SHEET.....
+2. COC 成長,瘋狂骰表
 
 2018/02/01
 更新模組化
 
 2018/02/17 
 發現說明有BUG,已修正
+2018/03/09
+更新DX3了
