@@ -26,7 +26,7 @@ function parseInput(rplyToken, inputStr) {
 		else if (functionswitch == 2) {
 			console.log('HERE != 2')
 			return
-		};
+		}
 
 		else if (functionswitch != 0) {
 			console.log('HERE != 0')
