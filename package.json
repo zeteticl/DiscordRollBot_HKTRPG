@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "Zetetic Line Bot",
   "engines": {
-    "node": "6.9.1"
+    "node": ">=7.6.0"
   },
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
+  "mongoose": ">=5.0.6"
     "express": "4.13.3",
     "body-parser": "1.15.2"
   },
