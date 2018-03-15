@@ -59,14 +59,13 @@ app.listen(app.get('port'), function() {
 	console.log('Node app is running on port', app.get('port'));
 });
 
-function handleEvent(event) {
+async function handleEvent(event) {
   switch (event.type) {
     case 'message':
       const message = event.message;
       switch (message.type) {
-				case 'text':
-				console.log('return = '+ exports.analytics.parseInput(event.rplyToken, event.message.text))
-          return exports.analytics.parseInput(event.rplyToken, event.message.text); 
+        case 'text':
+          return await exports.analytics.parseInput(event.rplyToken, event.message.text); 
         default:
            break;
       }
