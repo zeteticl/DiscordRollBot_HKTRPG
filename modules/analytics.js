@@ -30,7 +30,8 @@ require('fs').readdirSync('./roll/').forEach(function (file) {
 		//在下面位置開始分析trigger2
 		//普通ROLL擲骰判定在此	
 		else {
-			console.log('functionswitch02' + functionswitch);
+			console.log('functionswitch02 ' + functionswitch);
+			console.log('inputStr 01 ' + inputStr);
 
 			if (inputStr.match(/\w/) != null && inputStr.toLowerCase().match(/\d+d+\d/) != null) return exports.rollbase.nomalDiceRoller(inputStr, mainMsg[0], mainMsg[1], mainMsg[2]);
 
