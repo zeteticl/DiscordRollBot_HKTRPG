@@ -26,10 +26,10 @@ function parseInput(rplyToken, inputStr) {
 
 
 		//普通ROLL擲骰判定在此	
-		if (inputStr.match(/\w/) != null && inputStr.toLowerCase().match(/\d+d+\d/) != null) return exports.rollbase.nomalDiceRoller(inputStr, mainMsg[0], mainMsg[1], mainMsg[2]);
+		else if (inputStr.match(/\w/) != null && inputStr.toLowerCase().match(/\d+d+\d/) != null) return exports.rollbase.nomalDiceRoller(inputStr, mainMsg[0], mainMsg[1], mainMsg[2]);
 
 		//xBy>A 指令開始於此
-		if (trigger.match(/^(\d+)(b)(\d+)$/i) != null) return exports.advroll.xBy(trigger, mainMsg[1], mainMsg[2]);
+		else if (trigger.match(/^(\d+)(b)(\d+)$/i) != null) return exports.advroll.xBy(trigger, mainMsg[1], mainMsg[2]);
 		//xUy 指令開始於此	
 		if (trigger.match(/^(\d+)(u)(\d+)$/i) != null && isNaN(mainMsg[1]) == false) return exports.advroll.xUy(trigger, mainMsg[1], mainMsg[2], mainMsg[3]);
 
