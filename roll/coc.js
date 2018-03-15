@@ -28,21 +28,23 @@ function coc6(chack,text){
 function coc7(chack,text){
 	let temp = rollbase.Dice(100);	
 	if (text == null ) {
+	if (temp > chack) rply.text = temp + ' → 失敗' ;
+	if (temp <= chack) rply.text = temp + ' → 通常成功';
+	if (temp <= chack/2) rply.text = temp + ' → 困難成功';
+	if (temp <= chack/5) rply.text = temp + ' → 極限成功';
 	if (temp == 1) rply.text = temp + ' → 恭喜！大成功！';
 	if (temp == 100) rply.text = temp + ' → 啊！大失敗！';
-	if (temp <= chack/5) rply.text = temp + ' → 極限成功';
-	if (temp <= chack/2) rply.text = temp + ' → 困難成功';
-	if (temp <= chack) rply.text = temp + ' → 通常成功';
-	else rply.text = temp + ' → 失敗' ;
+	if (temp >= 96 && chack <= 49) rply.text = temp + ' → 啊！大失敗！';
 	}
 	else
 	{
+	if (temp > chack) rply.text = temp + ' → 失敗；' + text;
+	if (temp <= chack) rply.text = temp + ' → 通常成功；' + text;
+	if (temp <= chack/2) rply.text = temp + ' → 困難成功；' + text;
+	if (temp <= chack/5) rply.text = temp + ' → 極限成功；' + text;
 	if (temp == 1) rply.text = temp + ' → 恭喜！大成功！；' + text;
 	if (temp == 100) rply.text = temp + ' → 啊！大失敗！；' + text;
-	if (temp <= chack/5) rply.text = temp + ' → 極限成功；' + text;
-	if (temp <= chack/2) rply.text = temp + ' → 困難成功；' + text;
-	if (temp <= chack) rply.text = temp + ' → 通常成功；' + text;
-	else rply.text = temp + ' → 失敗；' + text;
+	if (temp >= 96 && chack <= 49) rply.text = temp + ' → 啊！大失敗！；' + text;
 	}
 		return rply;
 }
@@ -51,6 +53,7 @@ function coc7chack(temp,chack,text){
   if (text == null ) {
     if (temp == 1) return temp + ' → 恭喜！大成功！';
     if (temp == 100) return temp + ' → 啊！大失敗！';
+    if (temp >= 96 && chack <= 49) return temp + ' → 啊！大失敗！';
     if (temp <= chack/5) return temp + ' → 極限成功';
     if (temp <= chack/2) return temp + ' → 困難成功';
     if (temp <= chack) return temp + ' → 通常成功';
@@ -60,6 +63,7 @@ else
   {
     if (temp == 1) return temp + ' → 恭喜！大成功！；' + text;
     if (temp == 100) return temp + ' → 啊！大失敗！；' + text;
+    if (temp >= 96 && chack <= 49) return temp + ' → 啊！大失敗！；' + text;
     if (temp <= chack/5) return temp + ' → 極限成功；' + text;
     if (temp <= chack/2) return temp + ' → 困難成功；' + text;
     if (temp <= chack) return temp + ' → 通常成功；' + text;
