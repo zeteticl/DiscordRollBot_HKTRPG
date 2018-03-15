@@ -25,12 +25,13 @@ async function parseInput(input) {
 	await exports.mongoose.switchfind(mainMsg[1], mainMsg[2], function (functionswitch) {
 		if (functionswitch === 0) {
 			return null;
+			console.log('functionswitch01' + functionswitch);
 		}
-
 		//在下面位置開始分析trigger2
-
 		//普通ROLL擲骰判定在此	
 		else {
+			console.log('functionswitch02' + functionswitch);
+
 			if (inputStr.match(/\w/) != null && inputStr.toLowerCase().match(/\d+d+\d/) != null) return exports.rollbase.nomalDiceRoller(inputStr, mainMsg[0], mainMsg[1], mainMsg[2]);
 
 			//xBy>A 指令開始於此
