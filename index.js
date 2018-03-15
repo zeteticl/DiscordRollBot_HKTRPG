@@ -66,6 +66,7 @@ function handleEvent(event) {
       switch (message.type) {
         case 'text':
 					  exports.analytics.parseInput(event.rplyToken, event.message.text, function(callback){
+							console.log(callback);
 							return callback;
 					}
 				); 
