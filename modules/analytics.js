@@ -9,7 +9,7 @@ require('fs').readdirSync('./roll/').forEach(function (file) {
 
 //用來呼叫骰組,新增骰組的話,要寫條件式到下面呼叫 
 //格式是 exports.骰組檔案名字.function名
-function parseInput(input) {
+async function parseInput(input) {
 	//console.log('InputStr: ' + inputStr);
 	_isNaN = function (obj) {
 		return isNaN(parseInt(obj));
@@ -22,7 +22,7 @@ function parseInput(input) {
 	//console.log(input);
 	//switchfind
 	//console.log("return = " + exports.mongoose.switchfind(mainMsg[1], mainMsg[2]));
-	exports.mongoose.switchfind(mainMsg[1], mainMsg[2], function (functionswitch) {
+	await exports.mongoose.switchfind(mainMsg[1], mainMsg[2], function (functionswitch) {
 		if (functionswitch === 0) {
 			return null;
 		}
