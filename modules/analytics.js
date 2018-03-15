@@ -103,7 +103,7 @@ function parseInput(rplyToken, inputStr) {
 */
 
 	}
-}
+	)}
 
 
 module.exports = {
