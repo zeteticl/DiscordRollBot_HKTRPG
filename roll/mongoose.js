@@ -6,7 +6,7 @@ var rply = { type: 'text' }; //type是必需的,但可以更改
 //////////////// 
 ////////////////////////////////////////		
 
-function switchfind(id, name, callback2) {
+async function switchfind(id, name, callback2) {
     mongodb.functionSwitch.findOne({
         groupid: id, functionname: name
     }, function (err, data) {
@@ -23,7 +23,7 @@ function switchfind(id, name, callback2) {
         }
         console.log('date = ' + data);
         console.log('data.functionswitch = ' + data.functionswitch);
-        callback2(data.functionswitch);
+         callback2(2);
         return;
     })
 };

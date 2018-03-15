@@ -20,9 +20,9 @@ function parseInput(rplyToken, inputStr) {
 
 	//在下面位置開始分析trigger
 	exports.mongoose.switchfind(mainMsg[1], mainMsg[2], function (functionswitch) {
-		if (functionswitch === null) ; 
+		//if (functionswitch === null);
 
-		if (functionswitch == 0) return null;
+		if (functionswitch == 2) return null;
 
 
 		//普通ROLL擲骰判定在此	
