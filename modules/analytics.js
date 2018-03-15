@@ -19,7 +19,7 @@ function parseInput(rplyToken, inputStr) {
 	let mainMsg = inputStr.match(msgSplitor); //定義輸入字串
 	let trigger = mainMsg[0].toString().toLowerCase(); //指定啟動詞在第一個詞&把大階強制轉成細階
 
-	exports.mongoose.switchfind(mainMsg[1], mainMsg[2], function (functionswitch) {
+	return exports.mongoose.switchfind(mainMsg[1], mainMsg[2], function (functionswitch) {
 		console.log('functionswitch = ' + functionswitch)
 		
 		if (functionswitch === null) {
