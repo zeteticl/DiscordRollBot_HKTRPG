@@ -23,7 +23,7 @@ function parseInput(input) {
 	//switchfind
 	//console.log("return = " + exports.mongoose.switchfind(mainMsg[1], mainMsg[2]));
 	exports.mongoose.switchfind(mainMsg[1], mainMsg[2], function (functionswitch) {
-		if (functionswitch === 0) return null;
+	//	if (functionswitch === 0) return null;
 		//在下面位置開始分析trigger2
 		//普通ROLL擲骰判定在此	
 
