@@ -24,7 +24,7 @@ function parseInput(rplyToken, inputStr) {
 			// Handle the error
 		}
 
-		if (functionswitch == 0) return null;
+//		if (functionswitch == 0) return null;
 
 		//在下面位置開始分析trigger
 
