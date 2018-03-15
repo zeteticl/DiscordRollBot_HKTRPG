@@ -10,7 +10,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-  "mongoose": ">=5.0.6"
+  "mongoose": ">=5.0.6",
     "express": "4.13.3",
     "body-parser": "1.15.2"
   },
