@@ -20,15 +20,16 @@ function parseInput(rplyToken, inputStr) {
 	let trigger = mainMsg[0].toString().toLowerCase(); //指定啟動詞在第一個詞&把大階強制轉成細階
 
 	exports.mongoose.switchfind(mainMsg[1], mainMsg[2], function (functionswitch) {
+		console.log('functionswitch = ' + functionswitch)
 		if (functionswitch === null) {
-			// Handle the error
+			console.log('HERE === NULL ')
 		}
 		else if (functionswitch == 2) {
 			console.log('HERE != 2')
 			return
 		}
 
-		else if (functionswitch != 0) {
+		else if (functionswitch != '898') {
 			console.log('HERE != 0')
 
 			//在下面位置開始分析trigger
