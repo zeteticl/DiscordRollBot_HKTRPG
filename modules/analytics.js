@@ -26,11 +26,12 @@ function parseInput(rplyToken, inputStr) {
 			console.log('HERE === NULL ')
 		}
 		if (functionswitch == 0) {
-			console.log('HERE != 0')
+			console.log('HERE == 0')
 			return;
 		}
 		else if (functionswitch != 0 ) {
 			console.log('HERE != 0')
+			console.log(inputStr)
 
 			//在下面位置開始分析trigger
 
