@@ -107,11 +107,11 @@ function X(mainMsg) {
 
 		if (functionswitch === null) {
 			console.log('HERE === NULL ')
-			return;
+			return "STOP";
 		}
 		else if (functionswitch == 0) {
 			console.log('HERE == 0')
-			return;
+			return "STOP";
 		}
 		else if (functionswitch != 0) {
 			console.log('HERE != 0')
