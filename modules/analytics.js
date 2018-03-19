@@ -116,7 +116,7 @@ async function X(mainMsg) {
 		else if (functionswitch != 0) {
 			console.log('HERE != 0')
 			console.log();
-			return "STOP";
+			return "OK";
 		}
 	})
 }
