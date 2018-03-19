@@ -65,7 +65,7 @@ function handleEvent(event) {
 			const message = event.message;
 			switch (message.type) {
 				case 'text':
-					var ww = exports.analytics.parseInput(event.rplyToken, event.message.text);
+					var ww = await exports.analytics.parseInput(event.rplyToken, event.message.text);
 					console.log(ww[0] + ww[1], ww[3]);
 
 					return exports.analytics.parseInput(event.rplyToken, event.message.text);
