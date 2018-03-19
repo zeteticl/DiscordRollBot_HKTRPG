@@ -17,10 +17,10 @@ async function parseInput(rplyToken, inputStr, callback) {
 
 	let msgSplitor = (/\S+/ig);
 	let mainMsg = inputStr.match(msgSplitor); //定義輸入字串
-	let trigger = await mainMsg[0].toString().toLowerCase(); //指定啟動詞在第一個詞&把大階強制轉成細階
+	let trigger =  mainMsg[0].toString().toLowerCase(); //指定啟動詞在第一個詞&把大階強制轉成細階
 
 
-	if (await X(inputStr) == "STOP") return;
+	if (X(inputStr) == "STOP") return;
 	//在下面位置開始分析trigger
 
 	//普通ROLL擲骰判定在此	

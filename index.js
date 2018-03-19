@@ -65,7 +65,8 @@ async function handleEvent(event) {
 			const message = event.message;
 			switch (message.type) {
 				case 'text':
-					await console.log('case ' + Promise.resolve(exports.analytics.parseInput(event.rplyToken, event.message.text)));
+					console.log('case1 ' + exports.analytics.parseInput(event.rplyToken, event.message.text));
+					await console.log('case2 ' + Promise.resolve(exports.analytics.parseInput(event.rplyToken, event.message.text)));
 					return await exports.analytics.parseInput(event.rplyToken, event.message.text);
 				default:
 					break;
