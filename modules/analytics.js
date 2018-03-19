@@ -9,7 +9,7 @@ require('fs').readdirSync('./roll/').forEach(function (file) {
 
 //用來呼叫骰組,新增骰組的話,要寫條件式到下面呼叫 
 //格式是 exports.骰組檔案名字.function名
-async function parseInput(rplyToken, inputStr, callback) {
+function parseInput(rplyToken, inputStr, callback) {
 	//console.log('InputStr: ' + inputStr);
 	_isNaN = function (obj) {
 		return isNaN(parseInt(obj));
@@ -17,10 +17,10 @@ async function parseInput(rplyToken, inputStr, callback) {
 
 	let msgSplitor = (/\S+/ig);
 	let mainMsg = inputStr.match(msgSplitor); //定義輸入字串
-	let trigger = await mainMsg[0].toString().toLowerCase(); //指定啟動詞在第一個詞&把大階強制轉成細階
+	let trigger = mainMsg[0].toString().toLowerCase(); //指定啟動詞在第一個詞&把大階強制轉成細階
 
 
-	if (await X(inputStr) == "STOP") return;
+	if (X(inputStr) == "STOP") return;
 	//在下面位置開始分析trigger
 
 	//普通ROLL擲骰判定在此	
@@ -101,7 +101,7 @@ async function parseInput(rplyToken, inputStr, callback) {
 
 }
 // How to call it
-async function X(mainMsg) {
+function X(mainMsg) {
 	exports.mongoose.switchfind(mainMsg[1], mainMsg[2], function (functionswitch) {
 		console.log('functionswitch = ' + functionswitch)
 
@@ -116,7 +116,7 @@ async function X(mainMsg) {
 		else if (functionswitch != 0) {
 			console.log('HERE != 0')
 			console.log();
-			return "OK";
+			return "STOP";
 		}
 	})
 }
