@@ -16,11 +16,11 @@ async function parseInput(rplyToken, inputStr, callback) {
 	let trigger = mainMsg[0].toString().toLowerCase(); //指定啟動詞在第一個詞&把大階強制轉成細階
 
 
-	if (X(inputStr) == "STOP") return;
+	if (await X(inputStr) == "STOP") return ;
 	//在下面位置開始分析trigger
 
 	//普通ROLL擲骰判定在此	
-	else if (inputStr.match(/\w/) != null && inputStr.toLowerCase().match(/\d+d+\d/) != null) return exports.rollbase.nomalDiceRoller(inputStr, mainMsg[0], mainMsg[1], mainMsg[2], callback);
+	else if (inputStr.match(/\w/) != null && inputStr.toLowerCase().match(/\d+d+\d/) != null) return await exports.rollbase.nomalDiceRoller(inputStr, mainMsg[0], mainMsg[1], mainMsg[2], callback;
 
 	//xBy>A 指令開始於此
 	else if (trigger.match(/^(\d+)(b)(\d+)$/i) != null) return exports.advroll.xBy(trigger, mainMsg[1], mainMsg[2]);
