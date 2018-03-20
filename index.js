@@ -59,14 +59,14 @@ app.listen(app.get('port'), function () {
 	console.log('Node app is running on port', app.get('port'));
 });
 
- function handleEvent(event) {
+function handleEvent(event) {
 	switch (event.type) {
 		case 'message':
 			const message = event.message;
 			switch (message.type) {
 				case 'text':
-					var ww =  exports.analytics.parseInput(event.rplyToken, event.message.text);
-					console.log(ww+ " " + ww[0]+ " "  + ww[1]+ " "  + ww[2]);
+					var ww = JSON.stringify(exports.analytics.parseInput(event.rplyToken, event.message.text));
+					console.log(ww + " " + ww[0] + " " + ww[1] + " " + ww[2]);
 					return exports.analytics.parseInput(event.rplyToken, event.message.text);
 				default:
 					break;
