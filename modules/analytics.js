@@ -9,12 +9,8 @@ require('fs').readdirSync('./roll/').forEach(function (file) {
 
 //用來呼叫骰組,新增骰組的話,要寫條件式到下面呼叫 
 //格式是 exports.骰組檔案名字.function名
-function parseInput(rplyToken, inputStr) {
+async function parseInput(rplyToken, inputStr) {
 	//console.log('InputStr: ' + inputStr);
-	_isNaN = function (obj) {
-		return isNaN(parseInt(obj));
-	}
-
 	let msgSplitor = (/\S+/ig);
 	let mainMsg = inputStr.match(msgSplitor); //定義輸入字串
 	let trigger = mainMsg[0].toString().toLowerCase(); //指定啟動詞在第一個詞&把大階強制轉成細階
