@@ -10,12 +10,12 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "4.13.3",
-    "body-parser": "1.15.2"
+    "body-parser": "^1.15.2",
+    "express": "^4.13.3"
   },
   "keywords": [
     "LeoLi",
-	"Zetetic",
+    "Zetetic",
     "Line"
   ],
   "license": "MIT"
