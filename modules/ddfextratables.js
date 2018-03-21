@@ -3,8 +3,9 @@
 require('fs').readdirSync('./table/').forEach(function (file) {
 	if (file.match(/\.txt$/) !== null && file !== 'index.txt') {
 		var name = file.replace('.txt', '');
-		exports[name] = require('fs').readFileSync('./table/' + file, 'utf8');
-		console.log(name + ' ' + ' ' + exports[name])
+		exports[name] = require('fs').readFileSync('./table/' + file, 'utf8').split(' ');
+	//判斷式  [0]2dx8-2+10,[1]2,[2]dx,[3]8,[4]-2+10,[5]-2,[6]-,[7]2,[8]+10,[9]+,[10]10  
+		console.log(name + ' ' + ' ' + exports[name][0])
 	}
 });
 
