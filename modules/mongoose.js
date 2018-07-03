@@ -14,15 +14,34 @@ mongoose.connect(uristring, function (err, res) {
 
 var functionSchema = new mongoose.Schema({
     groupid: String,
-    functionname: String,
-    functionswitch: String
+    function_name: String, 
+    switch: String
 });
+
+function updateSwitch(wherestr, updatestr) {
+    functionSwitch.update(wherestr, updatestr, { multi: true }, function (err, res) {
+        if (err) {
+            console.log("Error:" + err);
+        }
+        else {
+            console.log("Res:" + res);
+        }
+    })
+
+};
+
+function findSwitch(wherestr, function_type, function_name) {
+    functionSwitch.find({ wherestr }, function (err, docs) {
+        console.log(docs[0]);
+        eval("return docs[0]." + function_type + "." + function_name);
+
+    });
+
+}
 
 // Compiles the schema into a model, opening (or creating, if
 // nonexistent) the 'PowerUsers' collection in the MongoDB database
 var functionSwitch = mongoose.model('functionSwitchs', functionSchema);
-
-
 
 module.exports = {
     functionSwitch: functionSwitch

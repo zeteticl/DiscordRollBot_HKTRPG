@@ -16,7 +16,7 @@ async function parseInput(rplyToken, inputStr, callback) {
 	let trigger = mainMsg[0].toString().toLowerCase(); //指定啟動詞在第一個詞&把大階強制轉成細階
 
 
-	if (await X(inputStr) == "STOP") return ;
+	if (await X(inputStr) == "STOP") return;
 	//在下面位置開始分析trigger
 
 	//普通ROLL擲骰判定在此	

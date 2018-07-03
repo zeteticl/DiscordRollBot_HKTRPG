@@ -6,26 +6,15 @@ var rply = { type: 'text' }; //type是必需的,但可以更改
 //////////////// 
 ////////////////////////////////////////		
 
-function switchfind(id, name, callback) {
-    mongodb.functionSwitch.findOne({
-        groupid: id, functionname: name
-    }, function (err, data) {
-        if (err) {
-            console.log(err);
-            callback(null);
-            return;
-        }
+         // 雖然答案有兩個，但只會回傳第一個 Bobo 物件
 
-        else if (!data) {
-            console.log("No record found")
-            callback(null);
-            return;
-        }
-        console.log('date = ' + data);
-        console.log('data.functionswitch = ' + data.functionswitch);
-         callback(data.functionswitch);
-        return;
-    })
+
+function switchfind(id, name) {
+    var idcheck = functionSwitch.find(function(item, index, array){
+        return idcheck.groupid === '002';  // 取得陣列 like === '蘿蔔泥'
+      });
+      console.log(findLike);  
+
 };
 
 module.exports = {
