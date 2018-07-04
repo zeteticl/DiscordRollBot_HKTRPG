@@ -17,6 +17,16 @@ function switchfind(id, name) {
 
 };
 
+var small = new functionSwitch({
+    groupid: '002',
+    function_name: 'FKKKK',
+    switch: '1'
+});
+small.save(function (err) {
+    if (err) return handleError(err);
+    // saved!
+});
+
 module.exports = {
     switchfind: switchfind
 };
