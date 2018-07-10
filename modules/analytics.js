@@ -6,7 +6,7 @@ require('fs').readdirSync('./roll/').forEach(function (file) {
 		exports[name] = require('../roll/' + file);
 	}
 });
-import {switchJson} from 'mongoose';
+import {switchJson} from './mongoose.js';
 //用來呼叫骰組,新增骰組的話,要寫條件式到下面呼叫 
 //格式是 exports.骰組檔案名字.function名
 function parseInput(rplyToken, inputStr) {
