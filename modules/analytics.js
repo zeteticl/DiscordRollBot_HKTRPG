@@ -19,7 +19,7 @@ function parseInput(rplyToken, inputStr, callback) {
 	//在下面位置開始分析trigger
 
 	//普通ROLL擲骰判定在此	
-	else if (inputStr.match(/\w/) != null && inputStr.toLowerCase().match(/\d+d+\d/) != null) return await exports.rollbase.nomalDiceRoller(inputStr, mainMsg[0], mainMsg[1], mainMsg[2], callback);
+	if (inputStr.match(/\w/) != null && inputStr.toLowerCase().match(/\d+d+\d/) != null) return exports.rollbase.nomalDiceRoller(inputStr, mainMsg[0], mainMsg[1], mainMsg[2], callback);
 
 	//xBy>A 指令開始於此
 	else if (trigger.match(/^(\d+)(b)(\d+)$/i) != null) return exports.advroll.xBy(trigger, mainMsg[1], mainMsg[2]);
