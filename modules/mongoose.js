@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 let uristring = process.env.mongoURL ||
     'mongodb://testroll:testroll@ds243768.mlab.com:43768/testroll';
 mongoose.connect(uristring);
-var switchJson;
+export var switchJson;
 mongoose.connect(uristring, function (err, res) {
     if (err) {
         console.log('ERROR connecting to: ' + uristring + '. ' + err);
@@ -36,5 +36,5 @@ module.exports = {
     functionSwitch: functionSwitch
 };
 
-export { switchJson };
+
 
