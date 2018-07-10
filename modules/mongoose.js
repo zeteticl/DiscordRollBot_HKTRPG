@@ -9,35 +9,24 @@ mongoose.connect(uristring, function (err, res) {
     } else {
         console.log('Succeeded connected to: ' + uristring);
         // console.log('allswitch: ' + allswitch);
+        functionSwitch.find({})
+            .exec(function (error, posts) {
+                let switchJson = posts.map(function (p) {
+                    return p.toJSON()
+                });
+                switchJson.forEach(function (functionSwitch) {
+                    if (functionSwitch.groupid == '002') console.log('DONE');
+                });
+            })
     }
 });
 
 var functionSchema = new mongoose.Schema({
     groupid: String,
-    function_name: String, 
+    function_name: String,
     switch: String
 });
 
-function updateSwitch(wherestr, updatestr) {
-    functionSwitch.update(wherestr, updatestr, { multi: true }, function (err, res) {
-        if (err) {
-            console.log("Error:" + err);
-        }
-        else {
-            console.log("Res:" + res);
-        }
-    })
-
-};
-
-function findSwitch(wherestr, function_type, function_name) {
-    functionSwitch.find({ wherestr }, function (err, docs) {
-        console.log(docs[0]);
-        eval("return docs[0]." + function_type + "." + function_name);
-
-    });
-
-}
 
 // Compiles the schema into a model, opening (or creating, if
 // nonexistent) the 'PowerUsers' collection in the MongoDB database
