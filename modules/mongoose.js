@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 let uristring = process.env.mongoURL ||
     'mongodb://testroll:testroll@ds243768.mlab.com:43768/testroll';
 mongoose.connect(uristring);
-
+var switchJson;
 mongoose.connect(uristring, function (err, res) {
     if (err) {
         console.log('ERROR connecting to: ' + uristring + '. ' + err);
@@ -11,7 +11,7 @@ mongoose.connect(uristring, function (err, res) {
         // console.log('allswitch: ' + allswitch);
         functionSwitch.find({})
             .exec(function (error, posts) {
-                let switchJson = posts.map(function (p) {
+                switchJson = posts.map(function (p) {
                     return p.toJSON()
                 });
                 switchJson.forEach(function (functionSwitch) {
@@ -36,4 +36,5 @@ module.exports = {
     functionSwitch: functionSwitch
 };
 
+export { switchJson };
 
