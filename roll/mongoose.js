@@ -1,3 +1,4 @@
+var rply ={type : 'text'}; //type是必需的,但可以更改
 const mongoose = require('mongoose');
 let uristring = process.env.mongoURL ||
     'mongodb://testroll:testroll@ds243768.mlab.com:43768/testroll';
@@ -28,8 +29,26 @@ function onOff(id, name) {
 
 
 function updateSwitch(groupid, functionname, functionswitch) {
-    return "變更成功";
-    
+    functionSwitch.update({
+        groupid: groupid,
+        function_name: functionname
+    }, { switch: functionswitch }, { multi: true, upsert: true, new: true, setDefaultsOnInsert: true }, function (err, res) {
+        if (err) {
+            console.log("Error:" + err);
+        }
+        else {
+            console.log("Res:" + res);
+            functionSwitch.find({})
+                .exec(function (error, posts) {
+                    switchJson = posts.map(function (p) {
+                        return p.toJSON()
+                    });
+                })
+                return  rply.text="變更成功";
+
+        }
+    })
+        
 };
 
 var functionSchema = new mongoose.Schema({
