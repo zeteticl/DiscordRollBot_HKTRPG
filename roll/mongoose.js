@@ -29,6 +29,9 @@ function onOff(id, name) {
 
 
 function updateSwitch(groupid, functionname, functionswitch) {
+    rply.text="變更成功";
+    return rply;
+
     functionSwitch.update({
         groupid: groupid,
         function_name: functionname
@@ -44,8 +47,6 @@ function updateSwitch(groupid, functionname, functionswitch) {
                         return p.toJSON()
                     });
                 })
-                  rply.text="變更成功";
-                  return rply;
         }
     })
         
