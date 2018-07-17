@@ -9,7 +9,7 @@ require('fs').readdirSync('./roll/').forEach(function (file) {
 
 //用來呼叫骰組,新增骰組的話,要寫條件式到下面呼叫 
 //格式是 exports.骰組檔案名字.function名
-function parseInput(rplyToken, inputStr, groupid) {
+async function parseInput(rplyToken, inputStr, groupid) {
 	//console.log('InputStr: ' + inputStr);
 	_isNaN = function (obj) {
 		return isNaN(parseInt(obj));
@@ -80,12 +80,12 @@ function parseInput(rplyToken, inputStr, groupid) {
 			return;
 		}
 		else {
-			console.log(exports.mongoose.onOff(groupid, "隨機"));
+			console.log("ELSE" + exports.mongoose.onOff(groupid, "隨機"));
 			return exports.funny.choice(inputStr, mainMsg);
 		}
 	}
 	//tarot 指令
-	if (trigger.match(/tarot|塔羅牌|塔羅/) != null && exports.mongoose.onOff(groupid, "塔羅") != "0") {
+	if (trigger.match(/tarot|塔羅牌|塔羅/) != null && await exports.mongoose.onOff(groupid, "塔羅") != "0") {
 		if (trigger.match(/^單張|^每日|^daily/) != null) return exports.funny.NomalDrawTarot(mainMsg[1], mainMsg[2]);//預設抽 79 張
 		if (trigger.match(/^時間|^time/) != null) return exports.funny.MultiDrawTarot(mainMsg[1], mainMsg[2], 1);
 		if (trigger.match(/^大十字|^cross/) != null) return exports.funny.MultiDrawTarot(mainMsg[1], mainMsg[2], 2);
