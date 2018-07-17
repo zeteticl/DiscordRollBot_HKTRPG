@@ -38,7 +38,7 @@ function updateSwitch(groupid, functionname, functionswitch) {
         }
         else {
             console.log("Res:" + res);
-            return "Res:" + res;
+            return  res;
             functionSwitch.find({})
                 .exec(function (error, posts) {
                     switchJson = posts.map(function (p) {
