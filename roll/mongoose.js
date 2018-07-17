@@ -2,7 +2,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 const mongoose = require('mongoose');
 let uristring = process.env.mongoURL ||
     'mongodb://testroll:testroll@ds243768.mlab.com:43768/testroll';
-mongoose.connect(uristring);
+mongoose.connect(uristring,{ useNewUrlParser: true });
 //export 
 var switchJson;
 mongoose.connect(uristring, function (err, res) {
