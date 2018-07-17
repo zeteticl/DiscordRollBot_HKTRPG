@@ -15,54 +15,41 @@ mongoose.connect(uristring, function (err, res) {
                 switchJson = posts.map(function (p) {
                     return p.toJSON()
                 });
-                switchJson.forEach(function (functionSwitch) {
-                    if (functionSwitch.groupid == '002') console.log('DONE');
-                });
             })
     }
 });
 
-
-function switchfind(id, name) {
-    var idcheck = functionSwitch.find(function (item, index, array) {
-        return idcheck.groupid === '002';  // 取得陣列 like === '蘿蔔泥'
+function onOff(id, name) {
+    switchJson.forEach(function (functionSwitch) {
+        if (functionSwitch.groupid == id && functionSwitch.function_name == id) return functionSwitch.switch;
     });
-    console.log(findLike);
 
 };
 
-function updateSwitch(wherestr, updatestr) {
-    functionSwitch.update(wherestr, updatestr, { multi: true }, function (err, res) {
+
+
+function updateSwitch(groupid, functionname, functionswitch) {
+    functionSwitch.update({
+        groupid: groupid,
+        function_name: functionname
+    }, { switch: functionswitch }, { multi: true, upsert: true, new: true, setDefaultsOnInsert: true }, function (err, res) {
         if (err) {
             console.log("Error:" + err);
         }
         else {
             console.log("Res:" + res);
+            functionSwitch.find({})
+                .exec(function (error, posts) {
+                    switchJson = posts.map(function (p) {
+                        return p.toJSON()
+                    });
+                })
+
         }
     })
 
 };
 
-function findSwitch(wherestr, function_type, function_name) {
-    functionSwitch.find({ wherestr }, function (err, docs) {
-        console.log(docs[0]);
-        eval("return docs[0]." + function_type + "." + function_name);
-
-    });
-
-}
-
-function findSwitch(wherestr, function_type, function_name) {
-    var small = new functionSwitch({
-        groupid: '002',
-        function_name: 'FKKKK',
-        switch: '1'
-    });
-    small.save(function (err) {
-        if (err) return handleError(err);
-        // saved!
-    });
-}
 
 
 
@@ -78,7 +65,8 @@ var functionSchema = new mongoose.Schema({
 var functionSwitch = mongoose.model('functionSwitchs', functionSchema);
 
 module.exports = {
-    functionSwitch: functionSwitch
+    updateSwitch: updateSwitch,
+    onOff: onOff
 };
 
 
