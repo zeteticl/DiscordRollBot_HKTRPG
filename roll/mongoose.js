@@ -29,6 +29,8 @@ function onOff(id, name) {
 
 
 function updateSwitch(groupid, functionname, functionswitch) {
+    return  "變更成功";
+            
     functionSwitch.update({
         groupid: groupid,
         function_name: functionname
@@ -38,7 +40,6 @@ function updateSwitch(groupid, functionname, functionswitch) {
         }
         else {
             console.log("Res:" + res);
-            return  res;
             functionSwitch.find({})
                 .exec(function (error, posts) {
                     switchJson = posts.map(function (p) {
