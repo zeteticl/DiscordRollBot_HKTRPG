@@ -23,14 +23,11 @@ function onOff(id, name) {
     switchJson.forEach(function (functionSwitch) {
         if (functionSwitch.groupid == id && functionSwitch.function_name == id) return functionSwitch.switch;
     });
-
 };
 
 
 
 function updateSwitch(groupid, functionname, functionswitch) {
-    return  "變更成功";
-            
     functionSwitch.update({
         groupid: groupid,
         function_name: functionname
@@ -46,14 +43,11 @@ function updateSwitch(groupid, functionname, functionswitch) {
                         return p.toJSON()
                     });
                 })
-
         }
     })
-
+    return "變更成功";
+    
 };
-
-
-
 
 var functionSchema = new mongoose.Schema({
     groupid: String,
