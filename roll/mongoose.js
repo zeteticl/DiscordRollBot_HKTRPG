@@ -1,8 +1,8 @@
-var rply ={type : 'text'}; //type是必需的,但可以更改
+var rply = { type: 'text' }; //type是必需的,但可以更改
 const mongoose = require('mongoose');
 let uristring = process.env.mongoURL ||
     'mongodb://testroll:testroll@ds243768.mlab.com:43768/testroll';
-mongoose.connect(uristring,{ useNewUrlParser: true });
+mongoose.connect(uristring, { useNewUrlParser: true });
 //export 
 var switchJson;
 mongoose.connect(uristring, function (err, res) {
@@ -22,14 +22,18 @@ mongoose.connect(uristring, function (err, res) {
 
 function onOff(id, name) {
     switchJson.forEach(function (functionSwitch) {
-        if (functionSwitch.groupid == id && functionSwitch.function_name == id) return functionSwitch.switch;
+        if (functionSwitch.groupid == id && functionSwitch.function_name == id) {
+            console.log(functionSwitch.switch);
+            return functionSwitch.switch;
+
+        }
     });
 };
 
 
 
 function updateSwitch(groupid, functionname, functionswitch) {
-    
+
     functionSwitch.update({
         groupid: groupid,
         function_name: functionname
@@ -47,9 +51,9 @@ function updateSwitch(groupid, functionname, functionswitch) {
                 })
         }
     })
-    rply.text="變更成功";
+    rply.text = "變更成功";
     return rply;
-    
+
 };
 
 var functionSchema = new mongoose.Schema({
