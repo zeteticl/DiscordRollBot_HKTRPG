@@ -3,20 +3,20 @@
   "version": "1.0.0",
   "description": "Zetetic Line Bot",
   "engines": {
-    "node": "6.9.1"
+    "node": "8.9.4"
   },
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "4.13.3",
-	"mongoose": ">=5.2.2",
-    "body-parser": "1.15.2"
+    "express": "4.16.3",
+    "mongoose": ">=5.2.4",
+    "body-parser": "1.18.3"
   },
   "keywords": [
     "LeoLi",
-	"Zetetic",
+    "Zetetic",
     "Line"
   ],
   "license": "MIT"
