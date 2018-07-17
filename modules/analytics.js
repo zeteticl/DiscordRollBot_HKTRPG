@@ -79,8 +79,10 @@ function parseInput(rplyToken, inputStr, groupid) {
 		if (exports.mongoose.onOff(groupid, "隨機") == "0") {
 			return;
 		}
-		else return exports.funny.choice(inputStr, mainMsg);
-
+		else {
+			console.log(exports.mongoose.onOff(groupid, "隨機"));
+			return exports.funny.choice(inputStr, mainMsg);
+		}
 	}
 	//tarot 指令
 	if (trigger.match(/tarot|塔羅牌|塔羅/) != null && exports.mongoose.onOff(groupid, "塔羅") != "0") {
