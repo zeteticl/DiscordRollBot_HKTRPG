@@ -44,8 +44,8 @@ function updateSwitch(groupid, functionname, functionswitch) {
                         return p.toJSON()
                     });
                 })
-                return  rply.text="變更成功";
-
+                  rply.text="變更成功";
+                  return rply;
         }
     })
         
