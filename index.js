@@ -67,7 +67,7 @@ function handleEvent(event) {
       const message = event.message;
       switch (message.type) {
         case 'text':
-          return exports.analytics.parseInput(event.rplyToken, event.message.text); 
+          return exports.analytics.parseInput(event.rplyToken, event.message.text,event.source.groupId); 
         default:
            break;
       }
