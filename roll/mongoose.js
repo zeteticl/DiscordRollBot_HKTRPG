@@ -22,10 +22,9 @@ mongoose.connect(uristring, function (err, res) {
 
 function onOff(id, name) {
     switchJson.forEach(function (functionSwitch) {
-        if (functionSwitch.groupid == id && functionSwitch.function_name == id) {
+        if (functionSwitch.groupid == id && functionSwitch.function_name == name) {
             console.log(functionSwitch.switch);
             return functionSwitch.switch;
-
         }
     });
 };
