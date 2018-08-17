@@ -20,7 +20,7 @@ mongoose.connect(uristring, function (err, res) {
     }
 });
 
-function onOff(id, name) {
+function onOff2(id, name) {
     switchJson.forEach(function (functionSwitch) {
         if (functionSwitch.groupid == id && functionSwitch.function_name == name) {
             console.log(functionSwitch.switch);
@@ -29,7 +29,7 @@ function onOff(id, name) {
     });
 };
 
-function onOffWithFind(id, name) {
+function onOff(id, name) {
     return switchJson.find(item => item.id === id && item.name === name).switch;
   }
   
@@ -71,7 +71,8 @@ var functionSwitch = mongoose.model('functionSwitchs', functionSchema);
 
 module.exports = {
     updateSwitch: updateSwitch,
-    onOff: onOff
+    onOff: onOff,
+    onOff2: onOff2
 };
 
 
