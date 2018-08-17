@@ -23,12 +23,12 @@ function parseInput(rplyToken, inputStr, groupid) {
 
 	//ONOFF
 	if (trigger == 'admin' && mainMsg[1] == "onoff" && (mainMsg[2] == "塔羅" || mainMsg[2] == "隨機") && (mainMsg[3] == "1" || mainMsg[3] == "0")) {
-		setTimeout(function(data){
+		return setTimeout(function(data){
 			var data =  exports.mongoose.updateSwitch(groupid, mainMsg[2], mainMsg[3]);
 		},0);
 
 		
-	}
+	};
 	//普通ROLL擲骰判定在此	
 	if (inputStr.match(/\w/) != null && inputStr.toLowerCase().match(/\d+d+\d/) != null) return exports.rollbase.nomalDiceRoller(inputStr, mainMsg[0], mainMsg[1], mainMsg[2]);
 
@@ -90,7 +90,8 @@ function parseInput(rplyToken, inputStr, groupid) {
 		}
 	}
 	//tarot 指令
-	if (trigger.match(/tarot|塔羅牌|塔羅/) != null &&  exports.mongoose.onOff(groupid, "塔羅") != "0") {
+	if (trigger.match(/tarot|塔羅牌|塔羅/) != null &&  exports.mongoose.onOffWithFind(groupid, "塔羅") != "0") {
+		console.log(exports.mongoose.onOffWithFind(groupid, "塔羅"));
 		if (trigger.match(/^單張|^每日|^daily/) != null) return exports.funny.NomalDrawTarot(mainMsg[1], mainMsg[2]);//預設抽 79 張
 		if (trigger.match(/^時間|^time/) != null) return exports.funny.MultiDrawTarot(mainMsg[1], mainMsg[2], 1);
 		if (trigger.match(/^大十字|^cross/) != null) return exports.funny.MultiDrawTarot(mainMsg[1], mainMsg[2], 2);

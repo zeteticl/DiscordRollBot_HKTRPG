@@ -29,7 +29,10 @@ function onOff(id, name) {
     });
 };
 
-
+function onOffWithFind(id, name) {
+    return switchJson.find(item => item.id === id && item.name === name).switch;
+  }
+  
 
 function updateSwitch(groupid, functionname, functionswitch) {
 
