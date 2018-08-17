@@ -90,7 +90,7 @@ function parseInput(rplyToken, inputStr, groupid) {
 		}
 	}
 	//tarot 指令
-	if (trigger.match(/tarot|塔羅牌|塔羅/) != null &&  await exports.mongoose.onOff(groupid, "塔羅") != "0") {
+	if (trigger.match(/tarot|塔羅牌|塔羅/) != null &&   exports.mongoose.onOff(groupid, "塔羅") != "0") {
 		const result = await exports.mongoose.onOff(groupid, "塔羅");
 		console.log(result);
 		if (trigger.match(/^單張|^每日|^daily/) != null) return exports.funny.NomalDrawTarot(mainMsg[1], mainMsg[2]);//預設抽 79 張
