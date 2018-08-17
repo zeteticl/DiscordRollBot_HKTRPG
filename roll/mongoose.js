@@ -29,7 +29,7 @@ function onOff2(id, name) {
     });
 };
 
- async function onOff(id, name) {
+ function onOff(id, name) {
     return switchJson.find(item => item.id === id && item.name === name);
   }
   
