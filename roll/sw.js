@@ -129,7 +129,7 @@ function sw(triggermsg) {
         var returnStr = triggermsg + '(SW 威力表) → ';
         var match = /^(kk)0*([0-9][0-9]?|100)(|\+(\d+))(|\-(\d+))(|\@(\d+))$/i.exec(triggermsg);
         //	console.log(match);
-        if (match[8] == "") { match[8] = 10 }
+        if (match[8] == null) { match[8] = 10 }
         if (match[8] <= 2) {
             match[8] = 3
         }
