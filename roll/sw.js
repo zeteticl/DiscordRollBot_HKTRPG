@@ -156,7 +156,7 @@ function sw(triggermsg) {
         rply.text = returnStr;
 		return rply;
     }
-
+}
     function swroll(match, round, returnStr, finallynum) {
         //判斷式  [0]K013+21-5@8,[1]K,[2]13,[3]+21,[4]21,[5]-5,[6]5,[7]@8,[8]8
         var result = 0;
