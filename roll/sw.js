@@ -129,27 +129,38 @@ function sw(triggermsg) {
         var returnStr = triggermsg + '(SW 威力表) → ';
         var match = /^(kk)0*([0-9][0-9]?|100)(|\+(\d+))(|\-(\d+))(|\@(\d+))$/i.exec(triggermsg);
         //	console.log(match);
-        if (match[8] == null) { match[8] = 10 }
-        if (match[8] <= 2) {
-            match[8] = 3
+        if (match[11] == null) { match[11] = 10 }
+        if (match[11] <= 2) {
+            match[11] = 3
         }
 
         for (var round = 1; round > 0; round--) {
             [match, round, returnStr, finallynum] = swroll(match, round, returnStr, finallynum);
         }
-        //判斷式  [0]K013+21-5@8,[1]K,[2]13,[3]+21,[4]21,[5]-5,[6]5,[7]@8,[8]8
+        //判斷式  [0]KK1+5-5@5$5$+5,[1]KK,[2]1,[3]+5-5,[4]+5,[5]+,[6]5,[7]-5,[8]-,[9]5,[10]@5,[11]5,[12]$5,[13]5,[14]$+5,[15]5 
 
         returnStr = returnStr.replace(/[,][ ]+]/ig, ']');
-        if (match[4] > 0) {
-            for (var i = 0; i < Number(match[4]); i++) {
+        if (match[5] == '+') {
+            for (var i = 0; i < Number(match[6]); i++) {
                 finallynum++;
             }
         }
-        if (match[6] > 0) {
+        if (match[5] == '-') {
             for (var i = 0; i < Number(match[6]); i++) {
                 finallynum--;
             }
         }
+        if (match[8] == '+') {
+            for (var i = 0; i < Number(match[9]); i++) {
+                finallynum++;
+            }
+        }
+        if (match[8] == '-') {
+            for (var i = 0; i < Number(match[9]); i++) {
+                finallynum--;
+            }
+        }
+    
         if (match[0] > 0) returnStr += '→' + match[0] + '迴轉';
         if ((match[0] <= 1) && (/[*]/.test(returnStr))) returnStr += ' → 大失敗'
         else {
@@ -161,6 +172,8 @@ function sw(triggermsg) {
 }
     function swroll(match, round, returnStr, finallynum) {
         //判斷式  [0]K013+21-5@8,[1]K,[2]13,[3]+21,[4]21,[5]-5,[6]5,[7]@8,[8]8
+        //判斷式  [0]KK1+5-5@5$,[1]KK,[2]1,[3]+5-5,[4]+5,[5]+,[6]5,[7]-5,[8]-,[9]5,[10]@5,[11]5,[12]$5,[13]5,[14]$+5,[15]5 
+
         var result = 0;
         var rollnum = 1;
         if (isNaN(match[0])) match[0] = 0;
@@ -172,7 +185,7 @@ function sw(triggermsg) {
             varcoua = Math.floor(Math.random() * 6) + 1;
             varcoub = Math.floor(Math.random() * 6) + 1;
             result = rate_sw2_0[match[2]][varcoua + varcoub - 2];
-            if (varcoua + varcoub >= Number(match[8])) {
+            if (varcoua + varcoub >= Number(match[11])) {
                 match[1]++;
                 //match[0]++;
             }
