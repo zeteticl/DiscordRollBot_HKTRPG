@@ -204,7 +204,7 @@ function swroll(match, round, returnStr, finallynum) {
 
         }
         else {
-            varsu += varcoua + ',' + varcoub + ',';
+            varsu += varcoua + ',' + varcoub;
         }
         if (match[15] != null) {
             varsu += '+' + match[15];
