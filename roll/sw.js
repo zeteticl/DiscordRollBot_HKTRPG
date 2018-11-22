@@ -123,11 +123,11 @@ function sw(triggermsg) {
 
     //判斷式  [0]K013+21-5@8,[1]K,[2]13,[3]+21,[4]21,[5]-5,[6]5,[7]@8,[8]8
 
-    if (triggermsg.match(/^(kk)0*([0-9][0-9]?|100)(|\+(\d+))(|\-(\d+))(|\@(\d+))$/i) != null) {
+    if (triggermsg.match(/^(kk)0*([0-9][0-9]?|100)(((\+|-)(\d+)|)((\+|-)(\d+)|))(|\@(\d+))(|\$(\d+))(|\$\+(\d+))$/i) != null) {
         //var varcou = 0;
         var finallynum = 0;
         var returnStr = triggermsg + '(SW 威力表) → ';
-        var match = /^(kk)0*([0-9][0-9]?|100)(|\+(\d+))(|\-(\d+))(|\@(\d+))$/i.exec(triggermsg);
+        var match = /^(kk)0*([0-9][0-9]?|100)(((\+|-)(\d+)|)((\+|-)(\d+)|))(|\@(\d+))(|\$(\d+))(|\$\+(\d+))$/i.exec(triggermsg);
         //	console.log(match);
         if (match[11] == null) { match[11] = 10 }
         if (match[11] <= 2) {
