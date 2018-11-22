@@ -204,26 +204,26 @@ function swroll(match, round, returnStr, finallynum) {
 
         }
         else {
-            varsu += varcoua + ',' + varcoub;
+            varsu += varcoua + ',' + varcoub + ',';
         }
+        if (match[15] != null) {
+            varsu += '+' + match[15];
+        }
+
+        match[13] = null;
+        match[15] = null;
     }
-    if (match[15] != null) {
-        varsu += '+' + match[15];
+    returnStr += result + '[' + varsu + '] ';
+    if (isNaN(result)) { }
+    else {
+        finallynum += Number(result);
     }
-    match[13] = null;
-    match[15] = null;
-}
-returnStr += result + '[' + varsu + '] ';
-if (isNaN(result)) { }
-else {
-    finallynum += Number(result);
-}
-if (match[1] >= 1) {
-    round++;
-    match[0]++;
-    returnStr += '+ ';
-}
-return [match, round, returnStr, finallynum];
+    if (match[1] >= 1) {
+        round++;
+        match[0]++;
+        returnStr += '+ ';
+    }
+    return [match, round, returnStr, finallynum];
 }
 
 
