@@ -188,11 +188,14 @@ function swroll(match, round, returnStr, finallynum) {
         if (match[13] != null) {
             varcou = match[13];
         }
-        if (match[15] != null) {
+        if (match[15] >= 1) {
             varcou += match[15];
         }
+        if (varcou > 12) {
+            varcou =12;
+        }
         result = rate_sw2_0[match[2]][varcou - 2];
-        if (varcoua + varcoub >= Number(match[11])) {
+        if (varcou >= Number(match[11])) {
             match[1]++;
             //match[0]++;
         }
@@ -200,7 +203,7 @@ function swroll(match, round, returnStr, finallynum) {
             varsu += match[13];
         }
         else {
-            varsu += varcoua + ',' + varcoub + ', ';
+            varsu += varcoua + ',' + varcoub + ',';
             if (match[15] != null) {
                 varsu += match[13];
             }
