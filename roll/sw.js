@@ -192,7 +192,7 @@ function swroll(match, round, returnStr, finallynum) {
             varcou += match[15];
         }
         if (varcou > 12) {
-            varcou =12;
+            varcou = 12;
         }
         result = rate_sw2_0[match[2]][varcou - 2];
         if (varcou >= Number(match[11])) {
@@ -201,27 +201,29 @@ function swroll(match, round, returnStr, finallynum) {
         }
         if (match[13] != null) {
             varsu += match[13];
+
         }
         else {
-            varsu += varcoua + ',' + varcoub + ',';
-            if (match[15] != null) {
-                varsu += '+'+match[15];
-            }
+            varsu += varcoua + ',' + varcoub;
         }
-        match[13] = null;
-        match[15] = null;
     }
-    returnStr += result + '[' + varsu + '] ';
-    if (isNaN(result)) { }
-    else {
-        finallynum += Number(result);
+    if (match[15] != null) {
+        varsu += '+' + match[15];
     }
-    if (match[1] >= 1) {
-        round++;
-        match[0]++;
-        returnStr += '+ ';
-    }
-    return [match, round, returnStr, finallynum];
+    match[13] = null;
+    match[15] = null;
+}
+returnStr += result + '[' + varsu + '] ';
+if (isNaN(result)) { }
+else {
+    finallynum += Number(result);
+}
+if (match[1] >= 1) {
+    round++;
+    match[0]++;
+    returnStr += '+ ';
+}
+return [match, round, returnStr, finallynum];
 }
 
 
