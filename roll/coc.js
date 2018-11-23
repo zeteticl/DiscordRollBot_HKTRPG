@@ -244,13 +244,13 @@ function ccrt() {
 	var time = Math.floor(Math.random() * 10) + 1;
 	var PP = Math.floor(Math.random() * 100);
 	if (rollcc <= 7) {
-		rply.text = cocmadnessrt[rollcc] ;
-	};
+		rply.text = cocmadnessrt[rollcc] + '\n' + time + '輪數';
+	} else
 	if (rollcc == 8) {
-		rply.text = cocmadnessrt[rollcc];
-	};
+		rply.text = cocmadnessrt[rollcc] + '\n' + time + '輪數' + ' \n' + cocPhobias[PP];
+	} else
 	if (rollcc == 9) {
-		rply.text = cocmadnessrt[rollcc] ;
+		rply.text = cocmadnessrt[rollcc] + '\n' + time + '輪數' + ' \n' + cocManias[PP];
 	};
 
 	return rply;
