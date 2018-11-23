@@ -162,7 +162,7 @@ function sw(triggermsg) {
         }
 
         if (match[0] > 0) returnStr += '→' + match[0] + '迴轉';
-        if ((match[0] <= 1) && (/[*]/.test(returnStr))) returnStr += ' → 大失敗'
+        if ((match[0] ==0) && (/[*]/.test(returnStr))) returnStr += ' → 大失敗'
         else {
             returnStr += ' → ' + finallynum;
         }
@@ -185,14 +185,19 @@ function swroll(match, round, returnStr, finallynum) {
         varcoua = Math.floor(Math.random() * 6) + 1;
         varcoub = Math.floor(Math.random() * 6) + 1;
         var varcou = varcoua + varcoub;
-        if (match[13] != null) {
+        if (match[13] >= 1) {
             varcou = match[13];
         }
-        if (match[15] >= 1) {
-            varcou += match[15];
+        if (match[15] >=1) {
+			for (var i = 0; i < Number(match[15]); i++) {
+                varcou++;
+            }
         }
         if (varcou > 12) {
             varcou = 12;
+        }
+		if (varcou <= 2) {
+            varcou = 2;
         }
         result = rate_sw2_0[match[2]][varcou - 2];
         if (varcou >= Number(match[11])) {
