@@ -30,7 +30,7 @@ var cocmadnesssu = [
 	['8)逃避行為（Flee in panic）：調查員恢復清醒時發現自己在很遠的地方，也許迷失在荒郊野嶺，或是在駛向遠方的列車或長途汽車上。'],
 	['9)恐懼（Phobia）：調查員患上一個新的恐懼症。在表Ⅸ：恐懼症狀表上骰1 個D100 來決定症狀，或由守秘人選擇一個。調查員在1D10 小時後回過神來，並開始為避開恐懼源而採取任何措施。'],
 	['10)狂躁（Mania）：調查員患上一個新的狂躁症。在表Ⅹ：狂躁症狀表上骰1 個d100 來決定症狀，或由守秘人選擇一個。調查員會在1d10 小時後恢復理智。在這次瘋狂發作中，調查員將完全沉浸於其新的狂躁症狀。這症狀是否會表現給旁人則取決於守秘人和此調查員。']
-]
+];
 
 var cocPhobias = [
 	['1) 沐浴癖（Ablutomania）：執著于清洗自己。'],
@@ -133,7 +133,7 @@ var cocPhobias = [
 	['98) 臆盲症（Typhlomania）：病理性的失明。'],
 	['99) 嗜外狂（Xenomania）：痴迷于异國的事物。'],
 	['100) 喜獸癖（Zoomania）：對待動物的態度近乎瘋狂地友好。']
-]
+];
 
 var cocManias = [
 	['1) 洗澡恐懼症（Ablutophobia）：對于洗滌或洗澡的恐懼。'],
@@ -237,21 +237,20 @@ var cocManias = [
 	['99) 异域恐懼症（Xenophobia）：對陌生人或外國人的恐懼。'],
 	['100) 動物恐懼症（Zoophobia）：對動物的恐懼。']
 
-]
+];
 
 function ccrl() {
-
 	var rollcc = Math.floor(Math.random() * 10);
 	var time = Math.floor(Math.random() * 10) + 1;
 	var PP = Math.floor(Math.random() * 100);
 	if (rollcc <= 7) {
-		rply.text = cocmadnessrt[rollcc] + ' \n' + time + '輪數'
+		rply.text = cocmadnessrt[rollcc] + '\n' + time + '輪數';
 	};
 	if (rollcc == 8) {
-		rply.text = cocmadnessrt[rollcc] + ' \n' + time + '輪數' + ' \n' + cocPhobias[PP]
+		rply.text = cocmadnessrt[rollcc] + '\n' + time + '輪數' + ' \n' + cocPhobias[PP];
 	};
 	if (rollcc == 9) {
-		rply.text = cocmadnessrt[rollcc] + ' \n' + time + '輪數' + ' \n' + cocManias[PP]
+		rply.text = cocmadnessrt[rollcc] + '\n' + time + '輪數' + ' \n' + cocManias[PP];
 	};
 
 	return rply;
