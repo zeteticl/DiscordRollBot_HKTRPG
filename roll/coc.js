@@ -239,18 +239,18 @@ var cocManias = [
 
 ];
 
-function ccrl() {
+function ccrt() {
 	var rollcc = Math.floor(Math.random() * 10);
 	var time = Math.floor(Math.random() * 10) + 1;
 	var PP = Math.floor(Math.random() * 100);
 	if (rollcc <= 7) {
-		rply.text = cocmadnessrt[rollcc] + '\n' + time + '輪數';
+		rply.text = cocmadnessrt[rollcc] ;
 	};
 	if (rollcc == 8) {
-		rply.text = cocmadnessrt[rollcc] + '\n' + time + '輪數' + ' \n' + cocPhobias[PP];
+		rply.text = cocmadnessrt[rollcc];
 	};
 	if (rollcc == 9) {
-		rply.text = cocmadnessrt[rollcc] + '\n' + time + '輪數' + ' \n' + cocManias[PP];
+		rply.text = cocmadnessrt[rollcc] ;
 	};
 
 	return rply;
@@ -516,7 +516,7 @@ function PcBG() {
 
 
 module.exports = {
-	ccrl: ccrl,
+	ccrt: ccrt,
 	coc6: coc6,
 	coc7: coc7,
 	coc7chack: coc7chack,
