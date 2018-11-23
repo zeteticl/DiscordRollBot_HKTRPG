@@ -240,21 +240,21 @@ var cocManias = [
 ]
 
 function ccrl() {
-	var result;
-	var rollcc = Math.floor(Math.random() * 10) ;
+
+	var rollcc = Math.floor(Math.random() * 10);
 	var time = Math.floor(Math.random() * 10) + 1;
-	var PP = Math.floor(Math.random() * 100) + 1;
-	if (rollcc <= 8) {
-		result = cocmadnessrt[rollcc] + ' \n' + time + '輪數'
+	var PP = Math.floor(Math.random() * 100);
+	if (rollcc <= 7) {
+		rply.text = cocmadnessrt[rollcc] + ' \n' + time + '輪數'
+	};
+	if (rollcc == 8) {
+		rply.text = cocmadnessrt[rollcc] + ' \n' + time + '輪數' + ' \n' + cocPhobias[PP]
 	};
 	if (rollcc == 9) {
-		result = cocmadnessrt[rollcc] + ' \n' + time + '輪數' + ' \n' + cocPhobias[PP]
-	};
-	if (rollcc == 10) {
-		result = cocmadnessrt[rollcc] + ' \n' + time + '輪數' + ' \n' + cocManias[PP]
+		rply.text = cocmadnessrt[rollcc] + ' \n' + time + '輪數' + ' \n' + cocManias[PP]
 	};
 
-	return result;
+	return rply;
 }
 
 ////////////////////////////////////////
