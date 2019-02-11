@@ -1,6 +1,4 @@
 var rollbase = require('./rollbase.js');
-var rply = { type: 'text' }; //type是必需的,但可以更改
-
 var rate_sw2_0 = [
     //0
     ['*', 0, 0, 0, 1, 2, 2, 3, 3, 4, 4],
@@ -129,7 +127,9 @@ function sw(triggermsg) {
         var returnStr = triggermsg + '(SW 威力表) → ';
         var match = /^(kk)0*([0-9][0-9]?|100)(((\+|-)(\d+)|)((\+|-)(\d+)|))(|\@(\d+))(|\$(\d+))(|\$\+(\d+))(|gf)$/i.exec(triggermsg);
         //	console.log(match);
-        if (match[11] == null) { match[11] = 10 }
+        if (match[11] == null) {
+            match[11] = 10
+        }
         if (match[11] <= 2) {
             match[11] = 3
         }
@@ -162,7 +162,7 @@ function sw(triggermsg) {
         }
 
         if (match[0] > 0) returnStr += '→' + match[0] + '迴轉';
-        if ((match[0] ==0) && (/[*]/.test(returnStr))) returnStr += ' → 大失敗'
+        if ((match[0] == 0) && (/[*]/.test(returnStr))) returnStr += ' → 大失敗'
         else {
             returnStr += ' → ' + finallynum;
         }
@@ -170,6 +170,7 @@ function sw(triggermsg) {
         return rply;
     }
 }
+
 function swroll(match, round, returnStr, finallynum) {
     //判斷式  [0]K013+21-5@8,[1]K,[2]13,[3]+21,[4]21,[5]-5,[6]5,[7]@8,[8]8
     //判斷式  [0]KK1+5-5@5$,[1]KK,[2]1,[3]+5-5,[4]+5,[5]+,[6]5,[7]-5,[8]-,[9]5,[10]@5,[11]5,[12]$5,[13]5,[14]$+5,[15]5 
@@ -184,20 +185,20 @@ function swroll(match, round, returnStr, finallynum) {
     for (var i = 0; i < rollnum; i++) {
         varcoua = Math.floor(Math.random() * 6) + 1;
         varcoub = Math.floor(Math.random() * 6) + 1;
-        if(match[16] == 'gf') varcoub = varcoua;
+        if (match[16] == 'gf') varcoub = varcoua;
         var varcou = varcoua + varcoub;
         if (match[13] >= 1) {
             varcou = match[13];
         }
-        if (match[15] >=1) {
-			for (var i = 0; i < Number(match[15]); i++) {
+        if (match[15] >= 1) {
+            for (var i = 0; i < Number(match[15]); i++) {
                 varcou++;
             }
         }
         if (varcou > 12) {
             varcou = 12;
         }
-		if (varcou <= 2) {
+        if (varcou <= 2) {
             varcou = 2;
         }
         result = rate_sw2_0[match[2]][varcou - 2];
@@ -208,8 +209,7 @@ function swroll(match, round, returnStr, finallynum) {
         if (match[13] != null) {
             varsu += match[13];
 
-        }
-        else {
+        } else {
             varsu += varcoua + ',' + varcoub;
         }
         if (match[15] != null) {
@@ -220,8 +220,7 @@ function swroll(match, round, returnStr, finallynum) {
         match[15] = null;
     }
     returnStr += result + '[' + varsu + '] ';
-    if (isNaN(result)) { }
-    else {
+    if (isNaN(result)) {} else {
         finallynum += Number(result);
     }
     if (match[1] >= 1) {
