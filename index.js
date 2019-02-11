@@ -24,16 +24,10 @@ client.login(channelSecret);
 client.on('message', message => {
 	console.log(message.content);
 
-	if (message.content === '!ping') {
-		// send back "Pong." to the channel the message was sent in
-		message.channel.send('Pong.');
-	}
-
-
 	//訊息來到後, 會自動呼叫handleEvent 分類,然後跳到analytics.js進行骰組分析
 	//如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
 	try {
-		rplyVal = exports.analytics.parseInput("0", message.content);;
+		rplyVal = exports.analytics.parseInput(message.content);;
 	}
 	catch (e) {
 		console.log('catch error');
@@ -42,7 +36,7 @@ client.on('message', message => {
 	if (rplyVal) {
 		//exports.replyMsgToLine.replyMsgToLine(rplyToken, rplyVal, options);
 		message.channel.send(rplyVal.text);
-		console.log(rplyVal);
+	//	console.log(rplyVal);
 	} else {
 		console.log('Do not trigger');
 	}
