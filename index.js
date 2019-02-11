@@ -23,7 +23,8 @@ client.once('ready', () => {
 client.login(channelSecret);
 
 client.on('message', message => {
-	console.log(message.content);
+	console.log('message.content ' + message.content);
+	console.log('channelKeyword ' + channelKeyword);
 	let rplyVal = [];
 
 	let msgSplitor = (/\S+/ig);
@@ -34,7 +35,7 @@ client.on('message', message => {
 	//如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
 	try {
 		if (message.author.bot === false) {
-			if (channelKeyword && trigger == channelKeyword) {
+			if (channelKeyword != undefined && trigger == channelKeyword) {
 				trigger.shift();
 				rplyVal = exports.analytics.parseInput(trigger.join(' '));
 			} else {
