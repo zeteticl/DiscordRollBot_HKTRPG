@@ -1,8 +1,5 @@
 var rollbase = require('./rollbase.js');
-var rply = {
-	type: 'text'
-}; //type是必需的,但可以更改
-
+let rply = [];
 ////////////////////////////////////////
 //////////////// 恐懼
 ////////////////////////////////////////
@@ -254,6 +251,7 @@ function ccrt() {
 	};
 	return rply;
 }
+
 function ccsu() {
 	var rollcc = Math.floor(Math.random() * 10);
 	var time = Math.floor(Math.random() * 10) + 1;
