@@ -1,4 +1,5 @@
 var rollbase = require('./rollbase.js');
+let rply = {};
 var rate_sw2_0 = [
     //0
     ['*', 0, 0, 0, 1, 2, 2, 3, 3, 4, 4],
