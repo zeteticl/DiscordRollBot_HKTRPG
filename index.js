@@ -45,7 +45,7 @@ client.on('message', message => {
 			console.log('catch error');
 			console.log('Request error: ' + e.message);
 		}
-		if (rplyVal.text) {
+		if (rplyVal) {
 			message.channel.send(rplyVal.text);
 			//console.log("rplyVal: " + rplyVal);
 		} else {
