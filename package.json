@@ -1,12 +1,14 @@
 {
   "name": "Zetetic",
   "version": "1.0.0",
-  "description": "Zetetic Line Bot",
+  "description": "Zetetic Discord Bot",
   "engines": {
-    "node": "6.9.1"
+    "node": "6.9.1",
+    "npm": "*"
   },
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
   "dependencies": {
@@ -15,8 +17,9 @@
   },
   "keywords": [
     "LeoLi",
-	"Zetetic",
-    "Line"
+    "Zetetic",
+    "Discord",
+    "HKTRPG"
   ],
   "license": "MIT"
 }

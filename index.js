@@ -2,8 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var jsonParser = bodyParser.json();
-var channelAccessToken = process.env.LINE_CHANNEL_ACCESSTOKEN;
-var channelSecret = process.env.LINE_CHANNEL_SECRET;
+var channelSecret = process.env.DISCORD_CHANNEL_SECRET;
 const Discord = require('discord.js');
 const client = new Discord.Client();
 // Load `*.js` under modules directory as properties
@@ -20,7 +19,7 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
-client.login('process.env.Token');
+client.login(channelSecret);
 
 client.on('message', message => {
 	console.log(message.content);
