@@ -35,14 +35,16 @@ client.on('message', message => {
 	//如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
 	try {
 		if (message.author.bot === false) {
-			if (channelKeyword && trigger == channelKeyword) {
+			if (channelKeyword != null && trigger == channelKeyword) {
 				console.log('channelKeyword && trigger == channelKeyword');
 				mainMsg.shift();
 				rplyVal = exports.analytics.parseInput(mainMsg.join(' '));
 			} else {
-				if (channelKeyword == null)
+				if (channelKeyword == null) {
 					console.log('channelKeyword == null');
-				rplyVal = exports.analytics.parseInput(message.content);
+					rplyVal = exports.analytics.parseInput(message.content);
+				}
+
 			}
 
 		} else {
