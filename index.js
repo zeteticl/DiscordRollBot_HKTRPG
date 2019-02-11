@@ -36,11 +36,13 @@ client.on('message', message => {
 	try {
 		if (message.author.bot === false) {
 			if (channelKeyword && trigger == channelKeyword) {
+				console.log('channelKeyword && trigger == channelKeyword');
 				mainMsg.shift();
 				rplyVal = exports.analytics.parseInput(mainMsg.join(' '));
 			} else {
-				if (channelKeyword == undefined)
-					rplyVal = exports.analytics.parseInput(message.content);
+				if (channelKeyword == null)
+					console.log('channelKeyword == null');
+				rplyVal = exports.analytics.parseInput(message.content);
 			}
 
 		}
