@@ -2,7 +2,7 @@
 //var bodyParser = require('body-parser');
 //var app = express();
 //var jsonParser = bodyParser.json();
-var channelKeyword = process.env.DISCORD_CHANNEL_KEYWORD;
+var channelKeyword = process.env.DISCORD_CHANNEL_KEYWORD || "";
 var channelSecret = process.env.DISCORD_CHANNEL_SECRET;
 const Discord = require('discord.js');
 const client = new Discord.Client();
@@ -44,6 +44,8 @@ client.on('message', message => {
 					console.log('channelKeyword == null');
 				rplyVal = exports.analytics.parseInput(message.content);
 			}
+
+		} else {
 
 		}
 	} catch (e) {
