@@ -29,13 +29,12 @@ client.on('message', message => {
 		message.channel.send('Pong.');
 	}
 
-
+let rplyVal = {};
 	//訊息來到後, 會自動呼叫handleEvent 分類,然後跳到analytics.js進行骰組分析
 	//如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
 	try {
 		rplyVal = exports.analytics.parseInput(message.content);
-	}
-	catch (e) {
+	} catch (e) {
 		console.log('catch error');
 		console.log('Request error: ' + e.message);
 	}
