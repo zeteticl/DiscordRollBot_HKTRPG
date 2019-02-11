@@ -12,6 +12,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "discord.js": "11.4.2",
     "express": "4.13.3",
     "body-parser": "1.15.2"
   },
