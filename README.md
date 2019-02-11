@@ -91,7 +91,7 @@ Step4：把機器人邀請到你的頻道
 --
 * 剛剛複製了一個「CLIENT ID」把它取代到以下網址中間</br>
 ---
-![https://discordapp.com/oauth2/authorize?&client_id=CLIENTID&scope=bot&permissions=8](https://discordapp.com/oauth2/authorize?&client_id=CLIENTID&scope=bot&permissions=8)</br></br></br>
+[https://discordapp.com/oauth2/authorize?&client_id=CLIENTID&scope=bot&permissions=8](https://discordapp.com/oauth2/authorize?&client_id=CLIENTID&scope=bot&permissions=8)</br></br></br>
 ---
 * 點擊然後選擇你的頻道</br>
 
