@@ -1,7 +1,3 @@
-//var express = require('express');
-//var bodyParser = require('body-parser');
-//var app = express();
-//var jsonParser = bodyParser.json();
 var channelKeyword = process.env.DISCORD_CHANNEL_KEYWORD || "";
 var channelSecret = process.env.DISCORD_CHANNEL_SECRET;
 const Discord = require('discord.js');
@@ -47,14 +43,12 @@ client.on('message', message => {
 
 			}
 
-		} else {
-
-		}
+		} else {}
 	} catch (e) {
 		console.log('catch error');
 		console.log('Request error: ' + e.message);
 	}
-	if (rplyVal) {
+	if (rplyVal.text != "") {
 		//exports.replyMsgToLine.replyMsgToLine(rplyToken, rplyVal, options);
 		message.channel.send(rplyVal.text);
 		console.log("rplyVal: " + rplyVal);
