@@ -1,3 +1,4 @@
+var channelKeyword = process.env.DISCORD_CHANNEL_KEYWORD || "";
 var channelSecret = process.env.DISCORD_CHANNEL_SECRET;
 const Discord = require('discord.js');
 const client = new Discord.Client();
@@ -20,8 +21,6 @@ client.on('message', message => {
 	if (message.author.bot === false) {
 		//	console.log('message.content ' + message.content);
 		//	console.log('channelKeyword ' + channelKeyword);
-		var channelKeyword = process.env.DISCORD_CHANNEL_KEYWORD || "";
-
 		let rplyVal = [];
 		let msgSplitor = (/\S+/ig);
 		let mainMsg = message.content.match(msgSplitor); //定義輸入字串
@@ -40,8 +39,6 @@ client.on('message', message => {
 					rplyVal = exports.analytics.parseInput(message.content);
 				}
 			}
-
-
 		} catch (e) {
 			console.log('catch error');
 			console.log('Request error: ' + e.message);
