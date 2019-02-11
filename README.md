@@ -33,9 +33,7 @@ cc<= 改成 cc cc1 cc2 ccn1 ccn2。</br>
 模組化設計。</br></br>
 </br></br></br>
 
-==
-
-如何建立自己的Line骰子機器人
+如何建立自己的Discord骰子機器人
 ==
 
 準備動作：
@@ -56,21 +54,17 @@ Step2：建立DiscordBot賬號
 --
 * 到[http://discordapp.com/developers/applications/me](http://discordapp.com/developers/applications/me )登入一個Discord帳號，</br>
 點選「New Application」，按照指示註冊你的Discord Bot。</br>
-</br></br></br>
 ---
 
 * 記下那個「CLIENT ID」</br>
-</br></br></br>
----
+
 
 * 進入左方Setting 的Bot</br>
----
+
 
 * 在BUILD-A-BOT中點選Add Bot->Yes Do It. 接著把「Token」複製(Copy)下來</br>
-
-
-
-Step3：將LineBot部署到Heroku
+</br></br></br>
+Step3：將DiscordBot部署到Heroku
 --
 
 * 按一下下面這個按鈕</br>
@@ -90,14 +84,16 @@ Step3：將LineBot部署到Heroku
 Step4：把機器人邀請到你的頻道
 --
 * 剛剛複製了一個「CLIENT ID」把它取代到以下網址中間</br>
----
-[https://discordapp.com/oauth2/authorize?&client_id=CLIENTID&scope=bot&permissions=8](https://discordapp.com/oauth2/authorize?&client_id=CLIENTID&scope=bot&permissions=8)</br></br></br>
----
-* 點擊然後選擇你的頻道</br>
 
+[https://discordapp.com/oauth2/authorize?&client_id=CLIENTID&scope=bot&permissions=8](https://discordapp.com/oauth2/authorize?&client_id=CLIENTID&scope=bot&permissions=8)</br></br>
+
+* 點擊然後選擇你的頻道</br>
+* 然後就可以在頻道中使用你的Bot了.
+---
+</br></br></br>
 
 如何修改並上傳程式碼咧
-==
+--
 回到Heroku網頁，點選上面的Deploy，你會看到四種配置程式碼的方法。</br>
 ![Deploy](http://i.imgur.com/VVRpNLe.jpg)</br>
 
@@ -108,13 +104,14 @@ Step4：把機器人邀請到你的頻道
 或是你可以使用第三種（Dropbox），當你鏈接之後，它會自動幫你把你剛剛上線的程式碼下載到你的dropbox裡面。你修改完之後再上來Deploy就好咯。</br></br></br>
 
 
-
+</br>
 以上說明參考
+--
 https://github.com/zeteticl/TrpgLineBot-php
-
+</br></br>
 下一部希望更新是
 1. MONGODB (但好難啊....會有高手幫忙嗎....不想用GOOGLE SHEET.....
 
-
+</br>
 *2019/02/12
 完成DISCORD化
