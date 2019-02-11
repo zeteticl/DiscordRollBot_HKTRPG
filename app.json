@@ -9,7 +9,7 @@
 			"required": false 
 		},
 		"DISCORD_CHANNEL_SECRET": {
-			"description": "「Token」 必要"
+			"description": "「Token」 "
 		}
 	}
 }
