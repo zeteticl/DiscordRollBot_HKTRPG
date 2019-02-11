@@ -2,7 +2,7 @@ let rply = [];
 
 function Help() {
 	rply = {
-		"text": "【Discord擲骰BOT】v0.10 \
+		"text": "【Discord擲骰BOT】v0.20 \
 		 \n  \
 		 \n  支援基本擲骰, COC, 永遠的後日談, 黑暗世界, DX3, SW2.0 \
 \n 例如輸入2d6+1　攻撃！\
