@@ -146,7 +146,9 @@ Choice：啓動語choice/隨機/選項/選1</br>
 ・COC七版判定　CCx（目標値）</br>
 　x：獎勵骰/懲罰骰 (2～n2)。沒有的話可以省略。</br>
 例）CC 30　CC1 50　CCn2 75</br></br>
+・coc7角色背景：啓動語 coc7角色背景</br>
   
+
 ・NC 永遠的後日談擲骰</br>
 (骰數)NC/NA (問題)</br>
   例子 1NC 2Na+4 3na-2</br>
@@ -168,5 +170,4 @@ nDXc+m-m  n=骰數 c=暴擊值 m=其他修正</br>
 ・占卜運氣功能 字句中包括運氣即可</br>
 ・塔羅牌占卜 塔羅/大十字塔羅/每日塔羅牌</br>
   時間tarot 等關键字可啓動</br>
-  死亡FLAG：啓動語 立Flag/死亡flag</br>
-  coc7角色背景：啓動語 coc7角色背景</br>
+・死亡FLAG：啓動語 立Flag/死亡flag</br>
