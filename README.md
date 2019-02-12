@@ -3,8 +3,8 @@
 
 關於RoboYabaso
 ==
-RoboYabaso是一個開放源碼的line骰子機器人計畫。
-最早由LarryLo  Retsnimle開發。
+RoboYabaso是一個開放源碼的line骰子機器人計畫。</br>
+最早由LarryLo  Retsnimle開發。</br>
   
 
 這是建立在Heroku的免費伺服器上，所以大家都可以按照下面的教程，客制化做一個自己的DiscordBot！
@@ -12,8 +12,10 @@ RoboYabaso是一個開放源碼的line骰子機器人計畫。
 
 試用
 ==
-RoboYabasoDiscord@HKTRPG 的Link是：
-https://discordapp.com/oauth2/authorize?&client_id=544462904037081138&scope=bot&permissions=8
+RoboYabasoDiscord@HKTRPG 的Link是：</br>
+https://discordapp.com/oauth2/authorize?&client_id=544462904037081138&scope=bot&permissions=8 </br>
+
+骰組指令在最底下</br>
 
 </br>
 順便宣傳
@@ -31,7 +33,8 @@ https://discordapp.com/oauth2/authorize?&client_id=544462904037081138&scope=bot&
 cc<= 改成 cc cc1 cc2 ccn1 ccn2。</br>
 增加永遠後日談的NC擲骰 來自Rainsting/TarotLineBot。</br>
 增加wod 黑暗世界 DX3 SW2.0的擲骰。</br>
-模組化設計。</br></br>
+模組化設計。</br>
+自定啓動語。</br>
 </br></br></br>
 
 如何建立自己的Discord骰子機器人
