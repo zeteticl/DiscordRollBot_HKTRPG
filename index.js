@@ -49,11 +49,12 @@ client.on('message', message => {
 			console.log('Request error: ' + e.message);
 		}
 		if (rplyVal) {
-			if (privatemsg == 0) {
-				message.channel.send(rplyVal.text);
-			} else {
+			if (privatemsg == 1) {
 				message.channel.send("暗骰進行中");
-				message.author.send(rplyVal.text);
+				message.author.send(rplyVal.text);;
+			} else {
+
+				message.channel.send(rplyVal.text)
 			}
 			//console.log("rplyVal: " + rplyVal);
 		} else {
