@@ -40,7 +40,7 @@ client.on('message', message => {
 					rplyVal = exports.analytics.parseInput(mainMsg.join(' '));
 				} else {
 					if (channelKeyword == "") {
-						rplyVal = exports.analytics.parseInput(message.content);
+						rplyVal = exports.analytics.parseInput(mainMsg.join(' '));
 					}
 				}
 			}
