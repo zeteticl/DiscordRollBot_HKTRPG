@@ -34,16 +34,16 @@ client.on('message', message => {
 				privatemsg == 1;
 				mainMsg.shift();
 				trigger = mainMsg[0];
+			}
+			if (channelKeyword != "" && trigger == channelKeyword) {
+				mainMsg.shift();
+				rplyVal = exports.analytics.parseInput(mainMsg.join(' '));
 			} else {
-				if (channelKeyword != "" && trigger == channelKeyword) {
-					mainMsg.shift();
+				if (channelKeyword == "") {
 					rplyVal = exports.analytics.parseInput(mainMsg.join(' '));
-				} else {
-					if (channelKeyword == "") {
-						rplyVal = exports.analytics.parseInput(mainMsg.join(' '));
-					}
 				}
 			}
+
 		} catch (e) {
 			console.log('catch error');
 			console.log('Request error: ' + e.message);
