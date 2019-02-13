@@ -114,15 +114,28 @@ Step4：把機器人邀請到你的頻道
 --
 https://github.com/zeteticl/TrpgLineBot-php
 </br></br>
+
+另外Heroku 的免費PLAN 會把不運行的APP自動OFFLINE</br>
+以及一個月只可免費420小時，如果輸入信用卡資料，則可以免費升級1000小時</br>
+想持續運行的話，可以用https://uptimerobot.com/ 這網站，注冊後每五鐘PING/訪問APP就可以了。</br></br>
+
 下一部希望更新是
 1. MONGODB (但好難啊....會有高手幫忙嗎....不想用GOOGLE SHEET.....
 
 </br>
 *2019/02/12</br>
-完成DISCORD化
+完成DISCORD化</br>
+
+</br>
+*2019/02/14</br>
+暗骰功能增加,只要在指令前加入dr 即可</br>
+
 
 【擲骰BOT】
 --
+暗骰功能 在指令前打dr 結果會私訊你</br>
+例子 dr cc 80</br>
+基本擲骰1d100</br>
 例如輸入2d6+1　攻撃！</br>
 會輸出）2d6+1：攻撃  9[6+3]+1 = 10</br>
 如上面一樣,在骰子數字後方隔空白位打字,可以進行發言。</br>

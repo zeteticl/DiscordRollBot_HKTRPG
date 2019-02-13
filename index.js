@@ -50,11 +50,9 @@ client.on('message', message => {
 		}
 		if (rplyVal) {
 			if (privatemsg == 1) {
-				console.log(privatemsg);
 				message.channel.send("暗骰進行中");
 				message.author.send(rplyVal.text);;
 			} else {
-				console.log(privatemsg);
 				message.channel.send(rplyVal.text)
 			}
 			//console.log("rplyVal: " + rplyVal);
