@@ -31,7 +31,7 @@ client.on('message', message => {
 
 		try {
 			if (trigger == "dr") {
-				privatemsg == 1;
+				privatemsg = 1;
 				mainMsg.shift();
 				trigger = mainMsg[0].toString().toLowerCase();
 			}
