@@ -114,6 +114,11 @@ Step4：把機器人邀請到你的頻道
 --
 https://github.com/zeteticl/TrpgLineBot-php
 </br></br>
+
+另外Heroku 的免費PLAN 會把不運行的APP自動OFFLINE</br>
+以及一個月只可免費420小時，如果輸入信用卡資料，則可以免費升級1000小時</br>
+想持續運行的話，可以用https://uptimerobot.com/ 這網站，注冊後每五鐘PING/訪問APP就可以了。</br></br>
+
 下一部希望更新是
 1. MONGODB (但好難啊....會有高手幫忙嗎....不想用GOOGLE SHEET.....
 
