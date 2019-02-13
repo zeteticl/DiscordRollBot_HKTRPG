@@ -25,18 +25,23 @@ client.on('message', message => {
 		let msgSplitor = (/\S+/ig);
 		let mainMsg = message.content.match(msgSplitor); //定義輸入字串
 		let trigger = mainMsg[0].toString().toLowerCase(); //指定啟動詞在第一個詞&把大階強制轉成細階
-
+		let privatemsg = 0;
 		//訊息來到後, 會自動跳到analytics.js進行骰組分析
 		//如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
 
 		try {
-
-			if (channelKeyword != "" && trigger == channelKeyword) {
+			if (trigger == "dr") {
+				privatemsg == 1;
 				mainMsg.shift();
-				rplyVal = exports.analytics.parseInput(mainMsg.join(' '));
+				trigger = mainMsg[0];
 			} else {
-				if (channelKeyword == "") {
-					rplyVal = exports.analytics.parseInput(message.content);
+				if (channelKeyword != "" && trigger == channelKeyword) {
+					mainMsg.shift();
+					rplyVal = exports.analytics.parseInput(mainMsg.join(' '));
+				} else {
+					if (channelKeyword == "") {
+						rplyVal = exports.analytics.parseInput(message.content);
+					}
 				}
 			}
 		} catch (e) {
@@ -44,7 +49,12 @@ client.on('message', message => {
 			console.log('Request error: ' + e.message);
 		}
 		if (rplyVal) {
-			message.channel.send(rplyVal.text);
+			if (privatemsg == 0) {
+				message.channel.send(rplyVal.text);
+			} else {
+				message.channel.send("暗骰進行中");
+				message.author.send(rplyVal.text);
+			}
 			//console.log("rplyVal: " + rplyVal);
 		} else {
 			console.log('Do not trigger');
