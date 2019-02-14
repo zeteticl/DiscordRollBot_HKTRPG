@@ -18,7 +18,7 @@ client.once('ready', () => {
 client.login(channelSecret);
 
 client.on('message', message => {
-	if (message.author.bot === false) {
+	if (message.author.bot === false &&  message.content != "") {
 		//	console.log('message.content ' + message.content);
 		//	console.log('channelKeyword ' + channelKeyword);
 		let rplyVal = [];
