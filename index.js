@@ -18,10 +18,10 @@ client.once('ready', () => {
 client.login(channelSecret);
 
 client.on('message', message => {
-	if (message.author.bot === false) {
+	if (message.author.bot === false &&  message.content != "") {
 		//	console.log('message.content ' + message.content);
 		//	console.log('channelKeyword ' + channelKeyword);
-		let rplyVal = [];
+		let rplyVal = {};
 		let msgSplitor = (/\S+/ig);
 		let mainMsg = message.content.match(msgSplitor); //定義輸入字串
 		let trigger = mainMsg[0].toString().toLowerCase(); //指定啟動詞在第一個詞&把大階強制轉成細階
