@@ -1,4 +1,4 @@
-# RoboYabasoDiscord@HKTRPG  V0.2.0
+# RoboYabasoDiscord@HKTRPG  V0.3.0
 # 開放原始碼的Discord骰子機器人
 
 關於RoboYabaso
