@@ -1,5 +1,5 @@
 var rollbase = require('./rollbase.js');
-let rply = [];
+let rply = {};
 ////////////////////////////////////////
 //////////////// 恐懼
 ////////////////////////////////////////
@@ -235,6 +235,17 @@ var cocManias = [
 	['100) 動物恐懼症（Zoophobia）：對動物的恐懼。']
 
 ];
+
+function DevelopmentPhase(chack, text) {
+	let skill = rollbase.Dice(100);
+	let improved = rollbase.Dice(10);
+	if (skill >= 96 || skill > chack) {
+		rply.text = "成長或增強檢定: " + text + "\n1D100=" + skill + " 成功!\r 你的技能增加" + improved + "點!";
+	} else {
+		rply.text = "成長或增強檢定: " + text + "\n1D100=" + skill + " 失敗!\r 你的技能沒有變化!";
+	}
+	return rply;
+}
 
 function ccrt() {
 	var rollcc = Math.floor(Math.random() * 10);
