@@ -237,6 +237,7 @@ var cocManias = [
 ];
 
 function DevelopmentPhase(chack, text) {
+	if (text == undefined) text = "";
 	let skill = rollbase.Dice(100);
 	let improved = rollbase.Dice(10);
 	if (skill >= 96 || skill > chack) {
