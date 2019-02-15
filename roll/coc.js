@@ -240,9 +240,9 @@ function DevelopmentPhase(chack, text) {
 	let skill = rollbase.Dice(100);
 	let improved = rollbase.Dice(10);
 	if (skill >= 96 || skill > chack) {
-		rply.text = "成長或增強檢定: " + text + "\n1D100=" + skill + " 成功!\r 你的技能增加" + improved + "點!";
+		rply.text = "成長或增強檢定: " + text + "\n1D100=" + skill + " 成功!\n 你的技能增加" + improved + "點!";
 	} else {
-		rply.text = "成長或增強檢定: " + text + "\n1D100=" + skill + " 失敗!\r 你的技能沒有變化!";
+		rply.text = "成長或增強檢定: " + text + "\n1D100=" + skill + " 失敗!\n 你的技能沒有變化!";
 	}
 	return rply;
 }
@@ -549,5 +549,6 @@ module.exports = {
 	ArrMax: ArrMax,
 	build7char: build7char,
 	build6char: build6char,
-	PcBG: PcBG
+	PcBG: PcBG,
+	DevelopmentPhase: DevelopmentPhase
 };
