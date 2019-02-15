@@ -122,13 +122,14 @@ https://github.com/zeteticl/TrpgLineBot-php
 1. MONGODB (但好難啊....會有高手幫忙嗎....不想用GOOGLE SHEET.....
 
 </br>
+
 *2019/02/12</br>
 完成DISCORD化</br>
-
 </br>
 *2019/02/14</br>
-暗骰功能增加,只要在指令前加入dr 即可</br>
-
+暗骰功能增加,只要在指令前加入dr 即可</br></br>
+*2019/02/15</br>
+新增成長或增長檢定：dp (數值) (名字)</br></br>
 
 【擲骰BOT】
 --
@@ -157,9 +158,10 @@ Choice：啓動語choice/隨機/選項/選1</br>
 例）CCb 30　CCb 80</br>
 ・COC七版判定　CCx（目標値）</br>
 　x：獎勵骰/懲罰骰 (2～n2)。沒有的話可以省略。</br>
-例）CC 30　CC1 50　CCn2 75</br></br>
+例）CC 30　CC1 50　CCn2 75</br>
 ・coc7角色背景：啓動語 coc7角色背景</br>
-  
+・coc7 成長或增長檢定：dp (技能) (名稱)</br>
+例）DP 80 偵查</br></br>
 
 ・NC 永遠的後日談擲骰</br>
 (骰數)NC/NA (問題)</br>

@@ -1,4 +1,4 @@
-let rply = [];
+let rply = {};
 
 function Help() {
 	rply = {

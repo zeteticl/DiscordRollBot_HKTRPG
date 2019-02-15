@@ -30,10 +30,11 @@ function parseInput(inputStr) {
 	//xUy 指令開始於此	
 	if (trigger.match(/^(\d+)(u)(\d+)$/i) != null && isNaN(mainMsg[1]) == false) return exports.advroll.xUy(trigger, mainMsg[1], mainMsg[2], mainMsg[3]);
 
-	if (trigger.match(/^ccb$|^cc$|^ccn[1-2]$|^cc[1-2]$/) != null && mainMsg[1] <= 1000) {
+	if (trigger.match(/^ccb$|^cc$|^ccn[1-2]$|^cc[1-2]$|^dp$/) != null && mainMsg[1] <= 1000) {
 		//ccb指令開始於此
 		if (trigger == 'ccb' && mainMsg[1] <= 99) return exports.coc.coc6(mainMsg[1], mainMsg[2]);
-
+		//DevelopmentPhase幕間成長指令開始於此
+		if (trigger == 'dp' && mainMsg[1] <= 1000) return exports.coc.DevelopmentPhase(mainMsg[1], mainMsg[2]);
 
 
 		//cc指令開始於此
