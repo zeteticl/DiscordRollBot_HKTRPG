@@ -1,4 +1,4 @@
-# RoboYabasoDiscord@HKTRPG  V0.3.1
+# RoboYabasoDiscord@HKTRPG  V0.3.3
 # 開放原始碼的Discord骰子機器人
 關於RoboYabaso
 ==
@@ -130,6 +130,8 @@ https://github.com/zeteticl/TrpgLineBot-php
 暗骰功能增加,只要在指令前加入dr 即可</br></br>
 *2019/02/15</br>
 新增成長或增長檢定：dp (數值) (名字)</br></br>
+*2019/02/22</br>
+修改COC7版擲骰的顯示</br></br>
 
 【擲骰BOT】
 --
