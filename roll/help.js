@@ -1,10 +1,12 @@
-let rply = [];
+let rply = {};
 
 function Help() {
 	rply = {
-		"text": "【Discord擲骰BOT】v0.2.0 \
+		"text": "【Discord擲骰BOT】v0.3.1 \
 		 \n  \
 		 \n 支援基本擲骰, COC, 永遠的後日談, 黑暗世界, DX3, SW2.0 \
+		 \n 暗骰功能 在指令前打dr 結果會私訊你\
+		 \n 基本擲骰1d100\
 \n 例如輸入2d6+1　攻撃！\
 \n 會輸出）2d6+1：攻撃  9[6+3]+1 = 10\
 \n 如上面一樣,在骰子數字後方隔空白位打字,可以進行發言。\
