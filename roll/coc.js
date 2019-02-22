@@ -326,13 +326,13 @@ function coc7chack(temp, chack, text) {
 		if (temp <= chack) return temp + ' → 通常成功';
 		else return temp + ' → 失敗';
 	} else {
-		if (temp == 1) return temp + ' → 恭喜！大成功！；' + text;
-		if (temp == 100) return temp + ' → 啊！大失敗！；' + text;
-		if (temp >= 96 && chack <= 49) return temp + ' → 啊！大失敗！；' + text;
-		if (temp <= chack / 5) return temp + ' → 極限成功；' + text;
-		if (temp <= chack / 2) return temp + ' → 困難成功；' + text;
-		if (temp <= chack) return temp + ' → 通常成功；' + text;
-		else return temp + ' → 失敗；' + text;
+		if (temp == 1) return temp + ' → 恭喜！大成功！：' + text;
+		if (temp == 100) return temp + ' → 啊！大失敗！：' + text;
+		if (temp >= 96 && chack <= 49) return temp + ' → 啊！大失敗！：' + text;
+		if (temp <= chack / 5) return temp + ' → 極限成功：' + text;
+		if (temp <= chack / 2) return temp + ' → 困難成功：' + text;
+		if (temp <= chack) return temp + ' → 通常成功：' + text;
+		else return temp + ' → 失敗：' + text;
 	}
 }
 
@@ -351,7 +351,7 @@ function coc7bp(chack, bpdiceNum, text) {
 		countStr = countStr.substring(0, countStr.length - 1)
 		let countArr = countStr.split('、');
 		countStr = countStr + ' → ' + coc7chack(Math.min(...countArr), chack, text);
-		rply.text = chack + '\n' + countStr;
+		rply.text = '1D100 → ' + chack + "：\n" + countStr;
 		return rply;
 	}
 
