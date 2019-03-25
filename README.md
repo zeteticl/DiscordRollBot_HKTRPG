@@ -166,6 +166,9 @@ Choice：啓動語choice/隨機/選項/選1</br>
 ・coc6版創角：啓動語 cc6版創角 </br>
 ・coc7版創角：啓動語 cc7版創角 歲數</br>
 
+・coc7版 即時型瘋狂：啓動語 ccrt </br>
+・coc7版 總結型瘋狂：啓動語 ccsu </br>
+
 ・coc7 成長或增長檢定：dp (技能) (名稱)</br>
 例）DP 80 偵查</br></br>
 
