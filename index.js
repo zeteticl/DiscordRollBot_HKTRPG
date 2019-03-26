@@ -61,7 +61,7 @@ client.on('message', message => {
 		}
 	}
 });
-//Statue 
+//Set Activity  
 client.on('ready', () => {
-  client.user.setGame('bothelp |「運勢」')
+  client.user.setGame('使用說明 bothelp |運氣占卜「運勢」')
 })
