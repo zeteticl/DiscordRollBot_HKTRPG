@@ -1,4 +1,4 @@
-# RoboYabasoDiscord@HKTRPG  V0.3.3
+# RoboYabasoDiscord@HKTRPG  V0.3.4
 # 開放原始碼的Discord骰子機器人
 關於RoboYabaso
 ==
@@ -132,6 +132,8 @@ https://github.com/zeteticl/TrpgLineBot-php
 新增成長或增長檢定：dp (數值) (名字)</br></br>
 *2019/02/22</br>
 修改COC7版擲骰的顯示</br></br>
+*2019/03/26</br>
+運氣占卜關鍵字改為運勢,減少誤觸 </br></br>
 
 【擲骰BOT】
 --
@@ -192,7 +194,7 @@ KKn+m-m@c$d$+xGF n=骰數 c=暴擊值 m=其他修正 d=固定值 x=增加值</br
 nDXc+m-m  n=骰數 c=暴擊值 m=其他修正</br>
 例子 5DX8-1+8</br></br>
 
-・占卜運氣功能 字句中包括運氣即可</br>
+・占卜運氣功能 字句中包括「運勢」兩字即可</br>
 ・塔羅牌占卜 塔羅/大十字塔羅/每日塔羅牌</br>
   時間tarot 等關键字可啓動</br>
 ・死亡FLAG：啓動語 立Flag/死亡flag</br>
