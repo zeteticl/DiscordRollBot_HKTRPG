@@ -61,3 +61,7 @@ client.on('message', message => {
 		}
 	}
 });
+//Statue 
+bot.on('ready', () => {
+  bot.user.setGame('使用說明請輸入bothelp |運氣功能關鍵字「運勢」')
+})
