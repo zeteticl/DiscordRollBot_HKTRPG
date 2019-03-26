@@ -62,6 +62,6 @@ client.on('message', message => {
 	}
 });
 //Statue 
-bot.on('ready', () => {
-  bot.user.setGame('bothelp |「運勢」')
+client.on('ready', () => {
+  client.user.setGame('bothelp |「運勢」')
 })
