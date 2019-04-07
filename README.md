@@ -1,5 +1,6 @@
 把Line版  Discord版 和Telegram版 合成一個項目了</br>
 所以這項目不再更新</br>
+雖然是三合一, 但可以單獨使用</br>
 </br></br>
 https://github.com/hktrpg/TG.line.Discord.Roll.Bot
 
