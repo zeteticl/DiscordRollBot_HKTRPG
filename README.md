@@ -4,6 +4,18 @@
 新項目雖然是三合一, 但可以單獨啓動, 想要line 就只啟動line 平台功能</br>
 新項目網址:</br>
 https://github.com/hktrpg/TG.line.Discord.Roll.Bot
+</br>
+想試用這機械人的話,請按以下連結，輸入bothelp顯示教學.</br></br>
+Line版：</br>
+https://line.me/R/ti/p/svMLqy9Mik</br></br>
+Discord版： </br>
+https://discordapp.com/oauth2/authorize?&client_id=544462904037081138&scope=bot&permissions=8</br></br>
+Telegram版： </br>
+http://t.me/hktrpg_bot</br>
+網頁版：</br>
+https://www.hktrpg.com/tool/rollbot.html</br></br>
+簡易版網上擲骰工具 — 兩面 六面 十面 二十面 百面 自定</br>
+https://www.hktrpg.com/tool/roll.html</br>
 
 </br></br></br></br></br></br></br></br></br></br>
 </br></br></br></br></br></br></br></br></br></br>
