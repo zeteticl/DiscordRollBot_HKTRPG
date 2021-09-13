@@ -1,9 +1,12 @@
+move to 新項目網址:</br>
+https://github.com/hktrpg/TG.line.Discord.Roll.Bot
+
+
 這項目已不再更新</br>
 整合成一個可以同時在Telegram Discord Line 上運行項目了</br>
 所以新的功能都只會加入在新項目上</br>
 新項目雖然是三合一, 但可以單獨啓動, 想要line 就只啟動line 平台功能</br>
-新項目網址:</br>
-https://github.com/hktrpg/TG.line.Discord.Roll.Bot
+
 </br>
 想試用這機械人的話,請按以下連結，輸入bothelp顯示教學.</br></br>
 Line版：</br>
